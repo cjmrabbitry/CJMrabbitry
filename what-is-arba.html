@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What Is ARBA? | CJM Legacy Rabbitry</title>
+<meta name="description" content="-">
+<link rel="canonical" href="https://cjmrabbitry.com/what-is-arba">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="CJM Legacy Rabbitry">
+<meta property="og:title" content="What Is ARBA? | CJM Legacy Rabbitry">
+<meta property="og:description" content="-">
+<meta property="og:url" content="https://cjmrabbitry.com/what-is-arba">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Jost:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/site.css">
+
+</head>
+<body>
+
+<div id="site-header"></div>
+
+<!-- ============ PAGE CONTENT (from Webflow embed) ============ -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,500&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Public+Sans:wght@400;500;600&family=Jost:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#142440; --navy-deep:#0c1830;
+    --gold:#c6a15b; --gold-light:#e5cd97; --gold-deep:#b08535;
+    --cream:#f7f2e6; --ivory:#fffdf8;
+    --marsh:#4e6146; --marsh-deep:#37452f;
+    --ink: rgba(12,24,48,0.72);
+    --hair: rgba(20,36,64,0.14);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0; background:var(--cream); color:var(--navy-deep);
+    font-family:'Public Sans', sans-serif; line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{ background:var(--gold-light); color:var(--navy-deep); }
+
+  /* Reading progress tracker — pinned top-left */
+  #progress-wrap{
+    position:fixed; top:0; left:0; width:100%; height:4px; z-index:200;
+    background:transparent;
+  }
+  #progress-bar{
+    height:100%; width:0%; background:linear-gradient(90deg,var(--gold-deep),var(--gold));
+    transition:width 0.08s linear;
+  }
+  #progress-pct{
+    position:fixed; top:16px; left:16px; z-index:200;
+    font-family:'JetBrains Mono', monospace; font-size:11px; letter-spacing:0.06em;
+    background:var(--ivory); color:var(--navy); border:1px solid var(--hair);
+    padding:5px 9px; border-radius:20px; opacity:0; transform:translateY(-6px);
+    transition:opacity 0.3s ease, transform 0.3s ease; pointer-events:none;
+  }
+  #progress-pct.show{ opacity:1; transform:translateY(0); }
+
+  .wrap{ max-width:760px; margin:0 auto; padding:0 28px; }
+  .wrap-wide{ max-width:920px; margin:0 auto; padding:0 28px; }
+
+  /* Hero */
+  header.hero{
+    padding:96px 0 64px; border-bottom:1px solid var(--hair); position:relative;
+    background:
+      radial-gradient(600px 300px at 85% -10%, rgba(198,161,91,0.14), transparent 70%),
+      var(--cream);
+  }
+  .eyebrow{
+    font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.14em;
+    text-transform:uppercase; color:var(--marsh-deep); display:inline-flex; align-items:center;
+    gap:8px; margin-bottom:22px;
+  }
+  .eyebrow::before{ content:''; width:22px; height:1px; background:var(--marsh); display:inline-block; }
+  h1.hero-title{
+    font-family:'Fraunces', serif; font-weight:500; font-style:normal;
+    font-size:clamp(2.6rem, 5.5vw, 4.1rem); line-height:1.04; letter-spacing:-0.01em;
+    margin:0 0 26px; color:var(--navy-deep);
+  }
+  h1.hero-title em{ font-style:italic; font-weight:500; color:var(--gold-deep); }
+  .hero-sub{
+    font-size:1.18rem; color:var(--ink); max-width:56ch; margin:0;
+    font-weight:400;
+  }
+  .hero-meta{
+    display:flex; gap:22px; margin-top:34px; font-family:'Jost', sans-serif;
+    font-size:12.5px; letter-spacing:0.05em; text-transform:uppercase; color:var(--navy);
+    flex-wrap:wrap;
+  }
+  .hero-meta span{ opacity:0.65; }
+
+  /* Key takeaways callout */
+  .takeaways{
+    margin:44px 0 8px; background:var(--ivory); border:1px solid var(--hair);
+    border-left:3px solid var(--gold-deep); border-radius:6px; padding:28px 30px;
+  }
+  .takeaways h2{
+    font-family:'Jost', sans-serif; font-weight:600; font-size:12.5px;
+    letter-spacing:0.12em; text-transform:uppercase; color:var(--gold-deep);
+    margin:0 0 16px;
+  }
+  .takeaways ul{ margin:0; padding:0 0 0 20px; }
+  .takeaways li{ margin-bottom:10px; font-size:0.98rem; color:var(--navy-deep); }
+  .takeaways li:last-child{ margin-bottom:0; }
+  .takeaways li::marker{ color:var(--gold-deep); }
+
+  /* Article body */
+  article{ padding:56px 0 20px; }
+  article p{ font-size:1.04rem; color:var(--ink); margin:0 0 22px; }
+  article p.lede{ font-size:1.15rem; color:var(--navy-deep); }
+
+  h2.section-head{
+    font-family:'Cormorant Garamond', serif; font-weight:600; font-style:normal;
+    font-size:2.15rem; color:var(--navy-deep); margin:64px 0 20px; letter-spacing:-0.01em;
+  }
+  article > h2.section-head:first-child{ margin-top:0; }
+  h3.sub-head{
+    font-family:'Cormorant Garamond', serif; font-weight:600; font-size:1.4rem;
+    color:var(--navy); margin:34px 0 14px;
+  }
+
+  .divider{ border:none; border-top:1px solid var(--hair); margin:56px 0; }
+
+  /* Pull stat row */
+  .stat-row{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:1px;
+    background:var(--hair); border:1px solid var(--hair); border-radius:8px;
+    overflow:hidden; margin:36px 0;
+  }
+  .stat{ background:var(--ivory); padding:24px 20px; text-align:left; }
+  .stat .num{
+    font-family:'Cormorant Garamond', serif; font-weight:700; font-size:2.3rem;
+    color:var(--navy-deep); line-height:1; display:block; margin-bottom:6px;
+  }
+  .stat .label{
+    font-family:'JetBrains Mono', monospace; font-size:10.5px; letter-spacing:0.06em;
+    text-transform:uppercase; color:var(--marsh-deep);
+  }
+
+  /* Path / process list (genuinely sequential steps) */
+  .path{ margin:28px 0 8px; }
+  .path-step{ display:flex; gap:18px; padding:18px 0; border-top:1px solid var(--hair); }
+  .path-step:last-child{ border-bottom:1px solid var(--hair); }
+  .path-num{
+    font-family:'JetBrains Mono', monospace; font-size:12px; color:var(--gold-deep);
+    padding-top:3px; flex-shrink:0; width:26px;
+  }
+  .path-body h4{
+    font-family:'Jost', sans-serif; font-weight:600; font-size:0.98rem;
+    color:var(--navy-deep); margin:0 0 6px; letter-spacing:0.01em;
+  }
+  .path-body p{ margin:0; font-size:0.96rem; color:var(--ink); }
+
+  /* Value grid */
+  .value-grid{
+    display:grid; grid-template-columns:1fr 1fr; gap:20px; margin:30px 0 10px;
+  }
+  .value-card{
+    background:var(--ivory); border:1px solid var(--hair); border-radius:8px;
+    padding:24px 24px 22px;
+  }
+  .value-card .tag{
+    display:inline-block; font-family:'JetBrains Mono', monospace; font-size:10px;
+    letter-spacing:0.08em; text-transform:uppercase; color:var(--ivory);
+    background:var(--marsh); padding:3px 9px; border-radius:20px; margin-bottom:14px;
+  }
+  .value-card h4{
+    font-family:'Cormorant Garamond', serif; font-weight:600; font-size:1.2rem;
+    color:var(--navy-deep); margin:0 0 8px;
+  }
+  .value-card p{ font-size:0.94rem; margin:0; color:var(--ink); }
+
+  blockquote{
+    margin:36px 0; padding:2px 0 2px 26px; border-left:2px solid var(--gold);
+    font-family:'Cormorant Garamond', serif; font-style:italic; font-size:1.4rem;
+    color:var(--navy); line-height:1.5;
+  }
+
+  .closing{
+    margin-top:64px; padding:36px 0 0; border-top:1px solid var(--hair);
+  }
+  .closing p{ font-size:1.05rem; }
+
+  .source-note{
+    font-family:'JetBrains Mono', monospace; font-size:11px; color:var(--ink);
+    opacity:0.6; margin:40px 0 80px; letter-spacing:0.02em;
+  }
+
+  .sources{ margin:56px 0 0; padding-top:32px; border-top:1px solid var(--hair); }
+  .sources .sources-num{
+    font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.06em;
+    color:var(--gold-deep); margin:0 0 4px;
+  }
+  .sources h2{
+    font-family:'Jost', sans-serif; font-weight:600; font-size:12.5px;
+    letter-spacing:0.1em; text-transform:uppercase; color:var(--navy); margin:0 0 14px;
+  }
+  .sources .method{ font-size:0.94rem; color:var(--ink); margin:0 0 22px; max-width:66ch; }
+  .sources ol{ margin:0; padding-left:20px; }
+  .sources li{ font-size:0.9rem; color:var(--ink); margin-bottom:12px; }
+  .sources li a{ color:var(--navy); }
+  .sources .verify-note{
+    margin-top:26px; padding-top:22px; border-top:1px solid var(--hair);
+    font-size:0.94rem; color:var(--ink); max-width:66ch;
+  }
+  .sources .verify-note strong{ color:var(--navy-deep); }
+
+  @media (max-width:640px){
+    header.hero{ padding:72px 0 48px; }
+    .stat-row{ grid-template-columns:1fr; }
+    .value-grid{ grid-template-columns:1fr; }
+    .wrap, .wrap-wide{ padding:0 20px; }
+    #progress-pct{ top:10px; left:10px; }
+  }
+</style>
+<div id="progress-wrap"><div id="progress-bar"></div></div>
+  <div id="progress-pct">0%</div>
+
+  <header class="hero">
+    <div class="wrap">
+      <div class="eyebrow">Education</div>
+      <h1 class="hero-title">What Is <em>ARBA</em>,<br>and Why It Matters</h1>
+      <p class="hero-sub">Every serious rabbit breeder eventually runs into these four letters. Here's what the American Rabbit Breeders Association actually is, what it does, and why it quietly underpins nearly everything of value in the rabbit world — from the pedigree on your doe to the breed itself surviving another generation.</p>
+      <div class="hero-meta">
+        <span>Rabbitry Management Center</span>
+        <span>Education</span>
+        <span>12 min read</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <div class="takeaways">
+      <h2>Key Takeaways</h2>
+      <ul>
+        <li>ARBA is the national governing body for domestic rabbits and cavies in North America — it sets breed standards, licenses judges, and certifies pedigrees.</li>
+        <li>Its roots go back to 1910; it has operated continuously under evolving names for over a century.</li>
+        <li>The <em>Standard of Perfection</em> is the rulebook breeders are judged against — currently covering more than 50 recognized rabbit breeds and 13 cavy breeds.</li>
+        <li>Registration and judging aren't rubber stamps — both require years of experience, testing, and peer endorsement.</li>
+        <li>For breeders, ARBA membership converts a hobby into something verifiable: documented lineage, credible pricing, and a real community.</li>
+      </ul>
+    </div>
+
+    <article>
+
+      <h2 class="section-head">Where It Started</h2>
+      <p class="lede">ARBA didn't begin as a rabbit organization at all — it began as a response to a craze.</p>
+      <p>In the late 1800s, a domestic rabbit breed called the Belgian Hare swept the country in a wave of popularity. By 1910, that enthusiasm had organized itself into a formal club: the National Pet Stock Association. Over the next fifteen years the group changed names and headquarters several times — reflecting a period when the organization actually promoted far more than rabbits, including cavies, foxes, raccoons, and even rats and mice. By 1925 the group had narrowed its focus and become the American Rabbit and Cavy Breeders Association, setting the trajectory that would eventually become the ARBA known today.</p>
+      <p>That century-plus of continuous operation matters more than it might seem. Livestock organizations that survive that long tend to do so because breeders keep needing the thing they provide: a shared, trusted standard everyone agrees to be judged against.</p>
+
+      <hr class="divider">
+
+      <h2 class="section-head">What ARBA Actually Does</h2>
+      <p class="lede">At its core, ARBA exists to promote, develop, and improve the domestic rabbit and cavy — across every use case, from a single house pet to a several-hundred-head commercial operation.</p>
+      <p>It's a non-profit, membership-run organization with roughly 20,000 members across the United States, Canada, and abroad. That membership base is deliberately wide: pet owners, 4-H and FFA youth, hobby breeders, show exhibitors, and commercial producers all sit under the same organization, working from the same rulebook.</p>
+
+      <div class="stat-row">
+        <div class="stat"><span class="num">1910</span><span class="label">Organizational Roots</span></div>
+        <div class="stat"><span class="num">~20K</span><span class="label">Members Worldwide</span></div>
+        <div class="stat"><span class="num">53+13</span><span class="label">Rabbit &amp; Cavy Breeds</span></div>
+      </div>
+
+      <p>Practically, that mission plays out through a handful of concrete functions: writing and maintaining official breed standards, licensing the judges and registrars who apply them, sanctioning shows, running an annual national convention, and operating a youth program with its own contests and scholarships. None of it is ornamental — each piece solves a real problem breeders would otherwise face alone.</p>
+
+      <hr class="divider">
+
+      <h2 class="section-head">The Standard of Perfection</h2>
+      <p class="lede">If ARBA has a single founding document, it's this one.</p>
+      <p>Published roughly every five years, the <em>Standard of Perfection</em> is the book that defines what an ideal example of each recognized breed looks like — body type, fur, color, weight, condition — along with the disqualifications that pull an animal out of competition entirely. It also lays out the exact process a new breed or variety has to go through to earn official recognition, which is deliberately slow and rigorous by design.</p>
+      <p>This is the part that's easy to undersell: without an agreed written standard, "purebred" and "show quality" are just marketing words. With one, they mean something specific and checkable — the same Holland Lop being evaluated in Maryland and one being evaluated in Texas are being held to the identical printed description.</p>
+
+      <hr class="divider">
+
+      <h2 class="section-head">Registration: Proving the Pedigree</h2>
+      <p class="lede">Registration is where ARBA turns a rabbit's history into something documented.</p>
+      <p>A licensed ARBA registrar examines an animal against its breed standard and its pedigree — verifying that its lineage checks out for at least three generations — before the rabbit can carry an official ARBA registration number. That number becomes part of the animal's permanent record and travels with it if it's sold.</p>
+      <p>Becoming a registrar isn't casual, either. Candidates need years of continuous membership, written endorsements from twenty current ARBA members, and a passing score on both a written and oral exam administered by a licensed judge. That bar exists on purpose — a registration is only worth something if the person granting it has genuinely earned the authority to.</p>
+
+      <h3 class="sub-head">The path from breeder to registrar</h3>
+      <div class="path">
+        <div class="path-step">
+          <div class="path-num">01</div>
+          <div class="path-body"><h4>Continuous ARBA membership</h4><p>Sustained, active membership in good standing before an application is even considered.</p></div>
+        </div>
+        <div class="path-step">
+          <div class="path-num">02</div>
+          <div class="path-body"><h4>20 member endorsements</h4><p>Written sign-off from twenty current adult ARBA members, secured on the applicant's own initiative.</p></div>
+        </div>
+        <div class="path-step">
+          <div class="path-num">03</div>
+          <div class="path-body"><h4>Written &amp; oral examination</h4><p>Administered by an assigned ARBA judge; a minimum score of 70% is required on both.</p></div>
+        </div>
+        <div class="path-step">
+          <div class="path-num">04</div>
+          <div class="path-body"><h4>Licensed registrar</h4><p>Authorized to formally register animals and begin building toward a future judge's license.</p></div>
+        </div>
+      </div>
+
+      <hr class="divider">
+
+      <h2 class="section-head">Judges: The Standard, in Practice</h2>
+      <p>Judges are where the written standard meets the actual rabbit on the table. Earning a judge's license is a multi-year process layered on top of registrar experience: at minimum, five years raising and showing rabbits or cavies, two of those years as a licensed registrar, dozens of animals personally registered, and endorsements from twenty ARBA members in good standing. From there, candidates sit extensive written and oral exams and must assist in judging at least eight shows under six different licensed judges — each of whom has to sign off.</p>
+      <p>Licensing isn't the finish line, either. Working judges are required to attend a judges' conference at least once every five years and pass a yearly review exam with a minimum score of 80% just to keep their license active. That ongoing accountability is a big part of why an ARBA placing carries weight — the person awarding it answers to the same organization the breeder does.</p>
+
+      <hr class="divider">
+
+      <h2 class="section-head">Shows and the National Convention</h2>
+      <p>Local and regional shows run under ARBA sanction throughout the year, giving breeders in every district a place to compete, network, and get animals evaluated by licensed judges. All of it builds toward the ARBA National Convention — a week-long annual event that draws thousands of rabbits and cavies along with the breeders, judges, and youth members who bring them, for the largest competitions, educational contests, and Hall of Fame recognitions the organization holds.</p>
+      <p>For a breeder, showing under ARBA sanction is what turns "I think this is a nice rabbit" into a documented placing that other breeders and buyers actually recognize.</p>
+
+      <hr class="divider">
+
+      <h2 class="section-head">The Youth Program</h2>
+      <p>ARBA's youth division isn't an afterthought — it's one of the more structured 4-H-adjacent programs in American livestock. Young members compete in judging contests, breed identification, quiz bowl, showmanship, and Youth Royalty competitions, most of it culminating at the National Convention alongside the adult show. Youth members who've held membership for three or more years become eligible to apply for ARBA educational scholarships in their graduating year — a real, tangible payoff for kids who grow up inside the organization.</p>
+
+      <hr class="divider">
+
+      <h2 class="section-head">Why This Matters to Every Breeder</h2>
+      <p class="lede">Strip away the acronym and ARBA is solving a problem every livestock community eventually runs into: how do you make quality, lineage, and reputation mean the same thing to a stranger that they mean to you?</p>
+
+      <div class="value-grid">
+        <div class="value-card">
+          <span class="tag">Trust</span>
+          <h4>Verified Lineage</h4>
+          <p>A registered rabbit's pedigree has been checked by a licensed third party — not just claimed by the seller. That's the difference between "purebred" as a promise and as a fact.</p>
+        </div>
+        <div class="value-card">
+          <span class="tag">Trust</span>
+          <h4>A Shared Standard</h4>
+          <p>The Standard of Perfection means "show quality" is a specific, printed, checkable description — not a subjective sales pitch that varies rabbitry to rabbitry.</p>
+        </div>
+        <div class="value-card">
+          <span class="tag">Preservation</span>
+          <h4>Breeds That Would Otherwise Vanish</h4>
+          <p>Rare breeds survive because a standard exists to breed toward and a community exists that cares whether they're maintained at all.</p>
+        </div>
+        <div class="value-card">
+          <span class="tag">Preservation</span>
+          <h4>A Real Path to Expertise</h4>
+          <p>The registrar-to-judge pipeline turns experienced breeders into the next generation of evaluators, keeping the standard alive rather than static on a page.</p>
+        </div>
+        <div class="value-card">
+          <span class="tag">Community</span>
+          <h4>Nearly 20,000 Members</h4>
+          <p>From single-pet owners to commercial operations, all working from the same rulebook — a genuinely rare thing to have in a hobby this dispersed.</p>
+        </div>
+        <div class="value-card">
+          <span class="tag">Community</span>
+          <h4>A Future for Youth</h4>
+          <p>Structured contests and scholarships give the next generation of breeders a reason to stay — and a credential to show for it.</p>
+        </div>
+      </div>
+
+      <blockquote>ARBA isn't the reason people fall in love with rabbits. But it's a large part of why that love turns into something durable — breeds worth preserving, pedigrees worth trusting, and a community that outlasts any single rabbitry, including this one.</blockquote>
+    </article>
+    <div class="sources">
+      <p class="sources-num">9</p>
+      <h2>Sources</h2>
+      <p class="method">Organizational history and membership figures checked against ARBA's own published materials. Judge and registrar requirements checked against ARBA's official licensing policy documents rather than secondhand summaries, since those requirements change and carry real consequences for anyone pursuing a license.</p>
+      <ol>
+        <li>ARBA. "About the ARBA" — organizational history, founding in 1910 as the National Pet Stock Association, mission statement. <a href="https://arba.net/about-the-arba/">Link</a></li>
+        <li>Wikipedia. "American Rabbit Breeders Association" — governance structure, board of directors, Standard of Perfection publication cycle, breed counts. <a href="https://en.wikipedia.org/wiki/American_Rabbit_Breeders_Association">Link</a></li>
+        <li>LearnAboutRabbits. "The History of the American Rabbit Breeders Association" — 1952 name change, addition of the youth division. <a href="https://learnaboutrabbits.wordpress.com/2014/07/25/the-history-of-the-american-rabbit-breeders-association/">Link</a></li>
+        <li>ARBA. "Judges" — official judge's license requirements: five years raising/showing, two years as a registrar, 35/15 animals registered, 20 endorsements, exams, eight assisted shows, yearly review. <a href="https://arba.net/Judges/">Link</a></li>
+        <li>ARBA. "Judge and Registrar Licensing Policy" (official PDF) — registrar application requirements, fees, examination and endorsement process. <a href="https://arba.net/wp-content/uploads/2022/02/ARBA-Judge-and-Registrar-licensing-policy.pdf">Link</a></li>
+        <li>Lots of Lops Rabbitry. "How to Become a Registrar" — registrar exam scoring (70% minimum), 20-member endorsement process, assist requirements. <a href="http://www.lotsoflops.com/how-to-become-a-registrar.html">Link</a></li>
+        <li>ARBA. Homepage — current membership figures (~20,000 members), mission statement. <a href="https://arba.net/">Link</a></li>
+        <li>The Livestock Conservancy. "American Rabbit" — early ARBA breed recognition history (as the National Breeders and Fanciers Association of America). <a href="https://livestockconservancy.org/american-rabbit/">Link</a></li>
+      </ol>
+      <p class="verify-note"><strong>Verify before you rely on it.</strong> Membership counts, fees, and licensing requirements are set by ARBA's Board of Directors and do change. Confirm current numbers and requirements directly at <a href="https://arba.net">arba.net</a> before applying for registration, a registrar's license, or a judge's license.</p>
+    </div>
+  </div>
+<br><br><br>
+<script>
+  const bar = document.getElementById('progress-bar');
+  const pct = document.getElementById('progress-pct');
+  let hideTimer;
+  window.addEventListener('scroll', () => {
+    const h = document.documentElement;
+    const scrolled = h.scrollTop;
+    const height = h.scrollHeight - h.clientHeight;
+    const ratio = height > 0 ? Math.min(100, Math.max(0, (scrolled / height) * 100)) : 0;
+    bar.style.width = ratio + '%';
+    pct.textContent = Math.round(ratio) + '%';
+    pct.classList.add('show');
+    clearTimeout(hideTimer);
+    hideTimer = setTimeout(() => pct.classList.remove('show'), 900);
+  }, { passive: true });
+</script>
+<!-- ============ END PAGE CONTENT ============ -->
+<div data-peer-review></div>
+
+<div id="site-footer"></div>
+<script src="js/layout.js"></script>
+</body>
+</html>

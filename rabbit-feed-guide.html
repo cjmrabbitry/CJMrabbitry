@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reading the Guaranteed Analysis — A Beginner&#x27;s Guide | CJM Legacy Rabbitry</title>
+<meta name="description" content="-">
+<link rel="canonical" href="https://cjmrabbitry.com/rabbit-feed-guide">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="CJM Legacy Rabbitry">
+<meta property="og:title" content="Reading the Guaranteed Analysis — A Beginner&#x27;s Guide | CJM Legacy Rabbitry">
+<meta property="og:description" content="-">
+<meta property="og:url" content="https://cjmrabbitry.com/rabbit-feed-guide">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Jost:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/site.css">
+
+</head>
+<body>
+
+<div id="site-header"></div>
+
+<!-- ============ PAGE CONTENT (from Webflow embed) ============ -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Public+Sans:wght@400;500;600&family=Jost:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>:root{--navy:#142440;--navy-deep:#0c1830;--gold:#c6a15b;--gold-light:#e5cd97;--gold-hover:#b08535;--cream:#f7f2e6;--ivory:#fffdf8;--marsh:#4e6146;--marsh-deep:#37452f;--ink:#2a2f26;}*{box-sizing:border-box;}body{margin:0;background:var(--cream);color:var(--navy-deep);font-family:'Public Sans',sans-serif;line-height:1.7;font-size:17px;-webkit-font-smoothing:antialiased;}.wrap{max-width:900px;margin:0 auto;padding:0 28px;}a{color:var(--marsh-deep);}.crumb-bar{border-bottom:1px solid rgba(20,36,64,0.08);padding:20px 0;}.crumb-bar .wrap{display:flex;justify-content:space-between;align-items:center;}.crumb-bar a{font-family:'Jost',sans-serif;font-size:12.5px;letter-spacing:0.06em;text-transform:uppercase;color:var(--navy-deep);text-decoration:none;opacity:0.75;}.crumb-bar a:hover{opacity:1;}.wordmark{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:15px;letter-spacing:0.02em;color:var(--navy-deep);}header.hero{padding:56px 0 40px;}.eyebrow{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--marsh-deep);display:flex;align-items:center;gap:9px;margin-bottom:20px;}.eyebrow .dot{width:5px;height:5px;border-radius:50%;background:var(--gold-hover);}h1.hero-title{font-family:'Fraunces',serif;font-weight:500;font-size:44px;line-height:1.14;margin:0 0 20px;max-width:720px;letter-spacing:-0.01em;color:var(--navy-deep);}h1.hero-title em{font-style:italic;color:var(--gold-hover);font-weight:500;}p.hero-sub{font-size:18px;line-height:1.7;color:#4a4536;max-width:640px;margin:0 0 36px;}.stat-strip{background:var(--ivory);border:1px solid rgba(20,36,64,0.08);border-radius:8px;display:grid;grid-template-columns:repeat(4,1fr);overflow:hidden;}.stat{padding:22px 18px;text-align:center;border-right:1px solid rgba(20,36,64,0.08);}.stat:last-child{border-right:none;}.stat .figure{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:26px;color:var(--navy-deep);display:block;margin-bottom:4px;}.stat .caption{font-family:'Jost',sans-serif;font-size:11px;letter-spacing:0.04em;color:#6a6250;line-height:1.35;}main{padding:56px 0 40px;}section{margin-bottom:60px;}.section-head{margin-bottom:26px;}.section-tag{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold-hover);margin-bottom:10px;display:block;}h2{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:32px;color:var(--navy-deep);margin:0 0 10px;letter-spacing:-0.01em;}p.section-dek{color:#5a5142;font-size:16.5px;max-width:660px;margin:0;}.rule{height:1px;background:linear-gradient(90deg,var(--gold) 0%,transparent 70%);margin:0 0 48px;opacity:0.55;}.lede p{font-size:17.5px;color:#3a3527;max-width:700px;margin:0 0 16px;}.lede p:last-child{margin-bottom:0;}.nutrient-block{background:var(--ivory);border:1px solid rgba(20,36,64,0.08);border-radius:8px;padding:30px 32px;margin-bottom:22px;}.nutrient-head{display:flex;align-items:center;gap:16px;margin-bottom:16px;}.badge{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:500;color:var(--navy-deep);background:var(--gold-light);border-radius:5px;padding:8px 12px;white-space:nowrap;}.nutrient-head h3{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:26px;color:var(--navy-deep);margin:0;}.nutrient-block p{font-size:16px;color:#3a3527;margin:0 0 14px;}.nutrient-block p:last-of-type{margin-bottom:0;}.watch-box{margin-top:18px;padding:16px 20px;background:rgba(78,97,70,0.06);border-left:3px solid var(--marsh);border-radius:3px;}.watch-box .watch-label{font-family:'Jost',sans-serif;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--marsh-deep);font-weight:600;margin-bottom:6px;display:block;}.watch-box p{font-size:15px;margin:0;color:#3a3527;}.quality-list{list-style:none;padding:0;margin:0;display:grid;gap:16px;}.quality-list li{background:var(--ivory);border-radius:6px;padding:18px 22px;border:1px solid rgba(20,36,64,0.08);}.quality-list strong{font-family:'Cormorant Garamond',serif;color:var(--navy-deep);font-size:17.5px;font-weight:600;display:block;margin-bottom:4px;}.quality-list span{font-size:15.5px;color:#4a4536;}.ingredient-cols{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px;}.ing-box{background:var(--ivory);border-radius:6px;padding:26px 28px;border:1px solid rgba(20,36,64,0.08);}.ing-box.good{border-top:3px solid var(--marsh);}.ing-box.caution{border-top:3px solid var(--gold-hover);}.ing-box h4{font-family:'Jost',sans-serif;font-size:13px;letter-spacing:0.08em;text-transform:uppercase;margin:0 0 14px;font-weight:600;}.ing-box.good h4{color:var(--marsh-deep);}.ing-box.caution h4{color:var(--gold-hover);}.ing-box ul{margin:0;padding-left:18px;}.ing-box li{font-size:15.5px;color:#4a4536;margin-bottom:9px;line-height:1.55;}.ing-box li:last-child{margin-bottom:0;}.feed-table-wrap{background:var(--ivory);border-radius:6px;border:1px solid rgba(20,36,64,0.08);overflow:hidden;}table{width:100%;border-collapse:collapse;}thead th{background:var(--gold-light);color:var(--navy-deep);font-family:'Jost',sans-serif;font-size:12px;letter-spacing:0.06em;text-transform:uppercase;text-align:left;padding:14px 16px;font-weight:600;border-bottom:1px solid rgba(20,36,64,0.12);}tbody td{padding:16px;font-size:14.5px;color:#3a3527;border-bottom:1px solid rgba(20,36,64,0.07);vertical-align:top;}tbody tr:last-child td{border-bottom:none;}td.feed-name{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:17.5px;color:var(--navy-deep);}td.feed-name span{display:block;font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--gold-hover);letter-spacing:0.04em;margin-top:3px;font-weight:400;}td.feed-name a.dealer-link{display:inline-block;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:0.03em;color:var(--marsh-deep);margin-top:6px;text-decoration:none;border-bottom:1px solid var(--marsh);}td.feed-name a.dealer-link:hover{color:var(--marsh);}td.feed-rate{font-size:13.5px;color:#3a3527;line-height:1.5;}td.feed-rate em{font-style:italic;color:#8a8168;font-family:'Cormorant Garamond',serif;}.stat-line{font-family:'JetBrains Mono',monospace;font-size:12.5px;color:var(--marsh-deep);}.feed-note{font-size:15px;color:#5a5142;font-style:italic;font-family:'Cormorant Garamond',serif;margin:0 0 16px;}.table-footnote{font-size:13px;color:#8a8168;font-family:'JetBrains Mono',monospace;margin-top:12px;line-height:1.6;}.form-note{font-size:15.5px;color:#4a4536;margin-top:22px;background:var(--ivory);border-radius:6px;padding:20px 24px;border:1px solid rgba(20,36,64,0.08);}.form-note strong{font-family:'Cormorant Garamond',serif;font-weight:600;color:var(--navy-deep);font-size:17px;}.thumb-list{list-style:none;padding:0;margin:0;display:grid;gap:16px;}.thumb-list li{background:var(--ivory);border-radius:6px;padding:20px 24px;border-left:3px solid var(--gold);font-size:16px;color:#3a3527;}.thumb-list strong{font-family:'Cormorant Garamond',serif;color:var(--navy-deep);font-size:17.5px;font-weight:600;display:block;margin-bottom:3px;}.faq-list{display:flex;flex-direction:column;gap:12px;}details.faq-item{background:var(--ivory);border:1px solid rgba(20,36,64,0.08);border-radius:6px;padding:0;overflow:hidden;}details.faq-item summary{list-style:none;cursor:pointer;padding:18px 24px;font-family:'Cormorant Garamond',serif;font-weight:600;font-size:18px;color:var(--navy-deep);display:flex;justify-content:space-between;align-items:center;gap:16px;}details.faq-item summary::-webkit-details-marker{display:none;}details.faq-item summary::after{content:"+";font-family:'Jost',sans-serif;font-size:20px;font-weight:400;color:var(--gold-hover);flex-shrink:0;transition:transform 0.2s ease;}details.faq-item[open] summary::after{transform:rotate(45deg);}details.faq-item[open] summary{border-bottom:1px solid rgba(20,36,64,0.08);}.faq-answer{padding:4px 24px 20px;font-size:15.5px;color:#3a3527;line-height:1.7;}.faq-answer p{margin:0;}.sources{background:var(--ivory);border-radius:8px;padding:34px 36px;border:1px solid rgba(20,36,64,0.08);}.sources p.disclaimer{font-size:14.5px;color:#5a5142;margin:0 0 20px;font-style:italic;font-family:'Cormorant Garamond',serif;}.sources ol{margin:0 0 20px;padding-left:20px;}.sources li{font-size:14.5px;color:#4a4536;margin-bottom:8px;line-height:1.6;}.sources li a{color:var(--marsh-deep);}.verified-line{font-family:'JetBrains Mono',monospace;font-size:12px;color:#8a8168;margin:0;padding-top:16px;border-top:1px solid rgba(20,36,64,0.08);}footer.site-foot{text-align:center;padding:36px 0 50px;font-family:'Jost',sans-serif;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:#9a9078;}.toc{background:var(--ivory);border:1px solid rgba(20,36,64,0.08);border-radius:8px;padding:24px 28px;margin-top:24px;}.toc-label{font-family:'Jost',sans-serif;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold-hover);font-weight:600;margin-bottom:12px;display:block;}.toc ol{list-style:none;margin:0;padding:0;columns:2;column-gap:32px;}.toc li{margin-bottom:9px;break-inside:avoid;}.toc a{font-family:'Public Sans',sans-serif;font-size:14.5px;color:#3a3527;text-decoration:none;display:flex;gap:8px;}.toc a:hover{color:var(--marsh-deep);}.toc a .n{font-family:'JetBrains Mono',monospace;font-size:12.5px;color:var(--gold-hover);flex-shrink:0;}.sec-num{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--gold-hover);letter-spacing:0.06em;margin-bottom:8px;display:block;}.tier-tag{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.1em;text-transform:uppercase;padding:4px 9px;border-radius:3px;display:inline-block;margin-bottom:12px;font-weight:500;}.tier-tag.research{background:rgba(78,97,70,0.1);color:var(--marsh-deep);border:1px solid rgba(78,97,70,0.25);}.feed-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}.feed-card{background:var(--ivory);border:1px solid rgba(20,36,64,0.08);border-radius:8px;overflow:hidden;display:flex;flex-direction:column;}.feed-card .photo-wrap{background:#fff;padding:18px;display:flex;align-items:center;justify-content:center;height:170px;border-bottom:1px solid rgba(20,36,64,0.08);}.feed-card .photo-wrap img{max-height:134px;max-width:100%;object-fit:contain;}.feed-card .card-body{padding:20px 22px 22px;display:flex;flex-direction:column;flex:1;}.feed-card .card-name{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:19px;color:var(--navy-deep);margin:0 0 2px;}.feed-card .card-sub{font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--gold-hover);letter-spacing:0.03em;margin-bottom:12px;}.feed-card .card-stats{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--marsh-deep);background:rgba(78,97,70,0.07);border-radius:4px;padding:8px 10px;margin-bottom:12px;line-height:1.6;}.feed-card .card-label{font-family:'Jost',sans-serif;font-size:10.5px;letter-spacing:0.06em;text-transform:uppercase;color:#8a8168;margin-bottom:3px;display:block;}.feed-card .card-field{font-size:13.5px;color:#3a3527;margin:0 0 12px;line-height:1.5;}.feed-card .card-field em{font-style:italic;color:#8a8168;font-family:'Cormorant Garamond',serif;}.feed-card .card-field:last-of-type{margin-bottom:14px;}.feed-card a.dealer-link{margin-top:auto;font-family:'Jost',sans-serif;font-size:12px;letter-spacing:0.03em;color:var(--marsh-deep);text-decoration:none;border-top:1px solid rgba(20,36,64,0.08);padding-top:12px;display:block;}.feed-card a.dealer-link:hover{color:var(--marsh);}@media (max-width:720px){.toc ol{columns:1;}.feed-grid{grid-template-columns:1fr;}}@media (max-width:720px){h1.hero-title{font-size:32px;}.stat-strip{grid-template-columns:1fr 1fr;}.stat{border-bottom:1px solid rgba(20,36,64,0.08);}.ingredient-cols{grid-template-columns:1fr;}.nutrient-head{flex-wrap:wrap;}thead{display:none;}table,tbody,tr,td{display:block;width:100%;}tbody tr{border-bottom:1px solid rgba(20,36,64,0.1);padding:16px 0;}tbody td{padding:6px 16px;border-bottom:none;}td.feed-name{padding-top:12px;}}</style>
+<div class="crumb-bar">
+  <div class="wrap">
+    <span class="wordmark"></span>
+    <a href="./#learning-hub">← Learning Hub</a>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <h1 class="hero-title">Reading the <em>Guaranteed Analysis</em></h1>
+    <p class="hero-sub">A plain-language guide to what's actually in the bag — protein, fiber, fat, and vitamin A explained from the physiology up, plus how twelve feeds widely used by show breeders stack up against each other — for anyone new to feeding a show rabbit.</p>
+
+    <div class="stat-strip">
+      <div class="stat"><span class="figure">4</span><span class="caption">Numbers Every Bag Must Report</span></div>
+      <div class="stat"><span class="figure">16–18%</span><span class="caption">Typical Show-Feed Protein</span></div>
+      <div class="stat"><span class="figure">12</span><span class="caption">Feeds Compared Head-to-Head</span></div>
+      <div class="stat"><span class="figure">60–90</span><span class="caption">Days: Buy Only What You'll Use</span></div>
+    </div>
+
+    <nav class="toc">
+      <span class="toc-label">On This Page</span>
+      <ol>
+        <li><a href="#ga-basics"><span class="n">01</span> What Is the Guaranteed Analysis?</a></li>
+        <li><a href="#core-four"><span class="n">02</span> The Core Four, and Why They're There</a></li>
+        <li><a href="#ingredients"><span class="n">03</span> Why Ingredient Quality Isn't Just Marketing</a></li>
+        <li><a href="#feed-comparison"><span class="n">04</span> Feeds Widely Used by Show Breeders</a></li>
+        <li><a href="#rules-of-thumb"><span class="n">05</span> A Few Rules of Thumb</a></li>
+        <li><a href="#faq"><span class="n">06</span> FAQ</a></li>
+      </ol>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="lede" id="ga-basics">
+    <span class="sec-num">01</span>
+    <span class="tier-tag research">Research</span>
+    <span class="section-tag">Where To Start</span>
+    <h2>What Is the Guaranteed Analysis?</h2>
+    <p>The guaranteed analysis (GA) is a regulated panel that's legally required on every bag of livestock feed sold in the U.S., under standards set by the Association of American Feed Control Officials (AAFCO) and enforced state by state. Manufacturers must meet or exceed the minimums — and stay under the maximums — printed on the bag, which makes the GA the one part of the packaging you can take completely at face value.</p>
+    <p>Four numbers make up the core of it for rabbit feed: crude protein, crude fiber, crude fat, and vitamin A. None of them are arbitrary — each one exists because of something specific happening inside a rabbit's body. Below is the physiology behind each one, a comparison of twelve feeds widely used by ARBA and 4-H show breeders, and a short guide to reading the ingredient list beneath the GA panel.</p>
+  </section>
+
+  <div class="rule"></div>
+
+  <section id="core-four">
+    <div class="section-head">
+      <span class="sec-num">02</span>
+      <span class="tier-tag research">Research</span>
+      <span class="section-tag">The Guaranteed Analysis</span>
+      <h2>The Core Four, and Why They're There</h2>
+      <p class="section-dek">Each of these numbers earns its place on the bag for a specific physiological reason — not as an industry convention.</p>
+    </div>
+
+    <div class="nutrient-block">
+      <div class="nutrient-head">
+        <span class="badge">16–18%</span>
+        <h3>Protein</h3>
+      </div>
+      <p>Protein is broken down into amino acids during digestion, which the body then reassembles into muscle tissue, milk proteins, enzymes, hormones, and — notably for rabbits — keratin, the structural protein that makes up roughly nine-tenths of fur. That's why a protein-deficient rabbit often shows it first in a dull, thin coat, well before anything else becomes visible.</p>
+      <p>University extension research breaks protein requirements down by production stage: roughly 12–15% for a dry doe, herd buck, or resting adult, and 16–20% for a doe that's pregnant or nursing a litter. Most commercial rabbit feeds, though, are formulated as a single all-purpose ration rather than a separate bag for every life stage — which is exactly why the large majority of established show feeds land at 16–18% protein. That range is high enough to cover a lactating doe or a rabbit being conditioned for the table without a breeder needing to keep two different feeds on hand.</p>
+      <div class="watch-box">
+        <span class="watch-label">Watch for</span>
+        <p><strong>Too little:</strong> slowed growth, thin or brittle fur, smaller litters, lower weaning weights. <strong>Too much:</strong> not directly harmful to a healthy rabbit, but the excess nitrogen has to be filtered by the kidneys and excreted, which means more ammonia in the urine and unnecessary cost for no real benefit.</p>
+      </div>
+    </div>
+
+    <div class="nutrient-block">
+      <div class="nutrient-head">
+        <span class="badge">16–20%</span>
+        <h3>Fiber</h3>
+      </div>
+      <p>A rabbit's digestive system runs on a process unique among common livestock: hindgut fermentation. Long, indigestible fiber passes largely intact into the cecum, a large fermentation chamber where bacteria convert what they can into volatile fatty acids and B vitamins. The rabbit then eats the resulting soft droppings — called cecotropes — directly, to reabsorb those nutrients. This is called cecotrophy, and it's a normal, essential part of how a healthy rabbit digests, not a hygiene problem.</p>
+      <p>That same coarse fiber also acts as a physical "scratch factor" that keeps the gut wall moving. Without enough of it, motility slows — and a slow gut is the single biggest risk factor for GI stasis, one of the most common and most dangerous emergencies in domestic rabbits, as well as enterotoxemia, a frequently fatal overgrowth of <em>Clostridium</em> bacteria that disproportionately strikes young rabbits in the vulnerable weeks just after weaning.</p>
+      <div class="watch-box">
+        <span class="watch-label">Watch for</span>
+        <p><strong>Too little:</strong> GI stasis risk, enterotoxemia risk in young rabbits, soft or mucous-coated stool. <strong>Too much relative to protein and energy:</strong> rarely a problem on its own, but can mean a growing kit fills up on bulk before getting enough of what it actually needs.</p>
+      </div>
+    </div>
+
+    <div class="nutrient-block">
+      <div class="nutrient-head">
+        <span class="badge">1.5–3.5%</span>
+        <h3>Fat</h3>
+      </div>
+      <p>In the wild, a rabbit's diet is close to fat-free, so its digestive system was never built to process much of it — which is exactly why the number stays small on every bag. What fat is there still earns its place: it's the most energy-dense nutrient by weight, it supplies linoleic acid (an essential fatty acid a rabbit's body can't produce on its own), it supports cell membrane structure, and it helps the body absorb the fat-soluble vitamins A, D, E, and K out of the rest of the diet. It also shows up in a way breeders can see directly — coat shine and bloom.</p>
+      <div class="watch-box">
+        <span class="watch-label">Watch for</span>
+        <p><strong>Too little:</strong> a duller coat, and possibly reduced absorption of fat-soluble vitamins even when they're present elsewhere in the feed. <strong>Too much:</strong> loose stool, reduced appetite for the fiber the gut actually needs, and, over time, excess body fat that works against good show condition.</p>
+      </div>
+    </div>
+
+    <div class="nutrient-block">
+      <div class="nutrient-head">
+        <span class="badge">2,200–4,800 IU/lb</span>
+        <h3>Vitamin A</h3>
+      </div>
+      <p>Vitamin A is fat-soluble and stored in the liver, and it does far more than support eyesight. It maintains the health of epithelial tissue — the lining of the respiratory tract, digestive tract, and reproductive tract — which ties it directly to fertility, conception rates, and healthy fetal development. A doe that's short on vitamin A during gestation carries a higher risk of fetal resorption and kits born with congenital defects.</p>
+      <p>It's also a nutrient where more isn't simply better. Hypervitaminosis A, from prolonged over-supplementation, can cause its own birth defects and health problems — part of why feed manufacturers control the level precisely with a fortified premix rather than leaving it to naturally variable ingredients like alfalfa alone.</p>
+      <div class="watch-box">
+        <span class="watch-label">Watch for</span>
+        <p>The guaranteed minimum on the bag matters less than the bag's age. Vitamin A degrades with heat, light, and time — noticeably within a few months in a hot barn or an opened bag left in direct light. A fresher bag with a lower guaranteed minimum will often deliver more usable vitamin A than a stale bag with a higher one.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="rule"></div>
+
+  <section id="ingredients">
+    <div class="section-head">
+      <span class="sec-num">03</span>
+      <span class="tier-tag research">Research</span>
+      <span class="section-tag">Beneath the Guaranteed Analysis</span>
+      <h2>Why Ingredient Quality Isn't Just Marketing</h2>
+      <p class="section-dek">Two bags can carry an identical guaranteed analysis and still perform differently in the hutch, because the GA panel reports quantity — not the quality or bioavailability of what's supplying it.</p>
+    </div>
+
+    <ul class="quality-list">
+      <li><strong>Fixed formula vs. least-cost formula.</strong> <span>Some manufacturers use a "fixed" formula — the same specific ingredients in the same proportions every time. Others formulate "least-cost," substituting ingredients batch to batch based on current commodity prices while still hitting the same numbers on paper. A fixed formula tends to produce a more consistent pellet — worth knowing if a normally reliable feed has ever upset a rabbit's stomach for no obvious reason.</span></li>
+      <li><strong>Mineral form.</strong> <span>Trace minerals like zinc, copper, and manganese can be supplied as simple inorganic salts (sulfates and oxides) or as chelated, amino-acid-complexed forms, which are generally better absorbed. An ingredient list that specifies something like "zinc amino acid complex" rather than only "zinc sulfate" is signaling the more bioavailable form — though both are legitimate, and many quality feeds use a blend of the two.</span></li>
+      <li><strong>Fiber source and maturity.</strong> <span>Alfalfa and timothy both vary enormously in protein and fiber depending on the cutting. Earlier, coarser cuttings run higher in fiber and lower in protein; later, softer cuttings run richer and lower in fiber. A feed that leads with a named, specific forage — rather than a generic "grain products" or "plant protein products" — gives you a far better read on what you're actually feeding.</span></li>
+      <li><strong>Pellet integrity.</strong> <span>Binding agents like lignin sulfonate hold a pellet together so it survives shipping and handling without breaking into dust. A dusty bag means wasted feed at the bottom of every scoop, and the dust itself can be a respiratory irritant in an enclosed rabbitry.</span></li>
+    </ul>
+
+    <div class="ingredient-cols">
+      <div class="ing-box good">
+        <h4>Look for this</h4>
+        <ul>
+          <li><strong>A named forage first.</strong> Alfalfa meal, timothy meal, or a blend of the two should lead the list — forage is what a rabbit's gut is built to run on.</li>
+          <li><strong>Specific, named ingredients.</strong> "Soybean meal," "flax meal," and "yucca schidigera extract" tell you exactly what's in the bag.</li>
+          <li><strong>A uniform pellet.</strong> Every bite should offer the same nutrition, so a rabbit can't sort out the tasty bits and leave the rest.</li>
+          <li><strong>Yucca schidigera or prebiotics.</strong> Common, well-studied additions that support gut and odor control without being a red flag on their own.</li>
+        </ul>
+      </div>
+      <div class="ing-box caution">
+        <h4>Be cautious of this</h4>
+        <ul>
+          <li><strong>Grain listed before forage.</strong> Corn, wheat, or "processed grain by-products" ahead of alfalfa or timothy signals a cheaper, starchier formula.</li>
+          <li><strong>Muesli-style mixes.</strong> Loose seeds, corn flakes, or dried fruit let a rabbit pick out the sugary bits and leave the balanced pellet behind — a classic cause of selective feeding and obesity.</li>
+          <li><strong>Vague catch-all terms.</strong> "Plant protein products" or "grain products" without a specific name make it hard to know what you're actually feeding.</li>
+          <li><strong>A very short list.</strong> A handful of ingredients can mean a simple formula — or it can mean the fortification a rabbit needs is missing.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="rule"></div>
+
+  <section id="feed-comparison">
+    <div class="section-head">
+      <span class="sec-num">04</span>
+      <span class="section-tag">Head-to-Head</span>
+      <h2>Feeds Widely Used by Show Breeders</h2>
+      <p class="section-dek">No single feed is right for every rabbitry — climate, water, and your own rabbits' condition all play a part. These twelve are established, mill-produced formulas that turn up repeatedly in real breeder discussion, not just manufacturer marketing, and each is a reasonable, well-formulated starting point.</p>
+    </div>
+
+    <p class="feed-note">Figures below come directly from each brand's currently published guaranteed analysis, ingredient panel, and feeding directions, cross-checked against breeder-reported use.</p>
+
+    <div class="feed-grid">
+      <div class="feed-card">
+        <div class="photo-wrap"><img src="https://shop.purinamills.com/cdn/shop/products/AN_804273059297_2894275_RABBIT-SHOW-RABBIT_50-lb-Bag_Front_3D.jpg?v=1674848566" alt="Purina Show Rabbit Feed bag" loading="lazy"></div>
+        <div class="card-body">
+          <p class="card-name">Purina Show Rabbit Feed</p>
+          <p class="card-sub">Corn-free formula</p>
+          <div class="card-stats">16.0% / 18.5%–23% / 3.5% &middot; 4,800 IU/lb</div>
+          <span class="card-label">Top 5 Ingredients</span>
+          <p class="card-field">Dehydrated Alfalfa Meal, Wheat Middlings, Ground Soybean Hulls, Dehulled Soybean Meal, Wheat Flour</p>
+          <span class="card-label">Feeding Rate</span>
+          <p class="card-field">~0.5 oz/lb/day, limit-fed for show. Nursing does: free-choice, 1&ndash;3 oz/lb/day.</p>
+          <a class="dealer-link" href="https://www.purinamills.com/where-to-buy-animal-feed" target="_blank" rel="noopener">Find a Dealer &rarr;</a>
+        </div>
+      </div>
+      <div class="feed-card">
+        <div class="photo-wrap"><img src="https://shop.purinamills.com/cdn/shop/products/AN_804273059280_2894272_RABBIT-PROF-RABBIT_50-lb-Bag_Front_3D.jpg?v=1674833211" alt="Purina Professional bag" loading="lazy"></div>
+        <div class="card-body">
+          <p class="card-name">Purina Professional</p>
+          <p class="card-sub">High-protein, high-energy</p>
+          <div class="card-stats">18.0% / 14.5%–18.5% / 1.4% &middot; 4,800 IU/lb</div>
+          <span class="card-label">Top 5 Ingredients</span>
+          <p class="card-field">Dehydrated Alfalfa Meal, Wheat Middlings, Ground Soybean Hulls, Ground Corn, Dehulled Soybean Meal</p>
+          <span class="card-label">Feeding Rate</span>
+          <p class="card-field">~0.5 oz/lb/day, limit-fed for show/dry stock. Gestating does: 3&ndash;6 oz/day.</p>
+          <a class="dealer-link" href="https://www.purinamills.com/where-to-buy-animal-feed" target="_blank" rel="noopener">Find a Dealer &rarr;</a>
+        </div>
+      </div>
+      <div class="feed-card">
+        <div class="photo-wrap"><img src="https://shop.purinamills.com/cdn/shop/products/AN_804273059273_2894271_RABBIT-PUR-RABBIT-COMP_50-lb-Bag_Front_3D.jpg?v=1674846368" alt="Purina Complete bag" loading="lazy"></div>
+        <div class="card-body">
+          <p class="card-name">Purina Complete</p>
+          <p class="card-sub">Everyday, all-ages formula</p>
+          <div class="card-stats">16.0% / 17%–20% / 1.5% &middot; 4,800 IU/lb</div>
+          <span class="card-label">Top 5 Ingredients</span>
+          <p class="card-field">Dehydrated Alfalfa Meal, Wheat Middlings, Ground Soybean Hulls, Dehulled Soybean Meal, Ground Corn</p>
+          <span class="card-label">Feeding Rate</span>
+          <p class="card-field">~0.5 oz/lb/day for adult, non-lactating rabbits. Lactating does: 1&ndash;3 oz/lb/day.</p>
+          <a class="dealer-link" href="https://www.purinamills.com/where-to-buy-animal-feed" target="_blank" rel="noopener">Find a Dealer &rarr;</a>
+        </div>
+      </div>
+      <div class="feed-card">
+        <div class="photo-wrap"><img src="https://www.kalmbachfeeds.com/cdn/shop/files/16_Best-in-Show_Rabbit_Pellet.jpg?v=1765765363" alt="Kalmbach 16% Best-in-Show bag" loading="lazy"></div>
+        <div class="card-body">
+          <p class="card-name">Kalmbach 16% Best-in-Show</p>
+          <p class="card-sub">Alfalfa &amp; timothy blend</p>
+          <div class="card-stats">16.0% / 16%–20% / 2.5% &middot; 4,500 IU/lb</div>
+          <span class="card-label">Top 5 Ingredients</span>
+          <p class="card-field">Alfalfa Meal, Timothy Meal, Dehulled Soybean Meal, Processed Grain By-Products, Soybean Hulls</p>
+          <span class="card-label">Feeding Rate</span>
+          <p class="card-field">~0.5 oz/lb/day maintenance/show. Lactating: free-choice, 2&ndash;3 oz/lb/day. Growing: 4&ndash;6 oz/day.</p>
+          <a class="dealer-link" href="https://www.kalmbachfeeds.com/pages/where-to-buy" target="_blank" rel="noopener">Find a Dealer &rarr;</a>
+        </div>
+      </div>
+      <div class="feed-card">
+        <div class="photo-wrap"><img src="https://www.kalmbachfeeds.com/cdn/shop/files/18_best_in_show_rabbit_feed.jpg?v=1755106646" alt="Kalmbach 18% Best-in-Show bag" loading="lazy"></div>
+        <div class="card-body">
+          <p class="card-name">Kalmbach 18% Best-in-Show</p>
+          <p class="card-sub">Higher-protein sibling to the 16%</p>
+          <div class="card-stats">18.0% / 18%–22% / 2.5% &middot; 4,500 IU/lb</div>
+          <span class="card-label">Top 5 Ingredients</span>
+          <p class="card-field">Alfalfa Meal, Timothy Meal, Dehulled Soybean Meal, Processed Grain By-Products, Soybean Hulls</p>
+          <span class="card-label">Feeding Rate</span>
+          <p class="card-field">Same schedule as the 16%: ~0.5 oz/lb/day maintenance/show. Growing: 4&ndash;6 oz/day.</p>
+          <a class="dealer-link" href="https://www.kalmbachfeeds.com/pages/where-to-buy" target="_blank" rel="noopener">Find a Dealer &rarr;</a>
+        </div>
+      </div>
+      <div class="feed-card">
+        <div class="photo-wrap"><img src="https://mannapro.com/cdn/shop/files/shorabbitfeed2.png?v=1728415716" alt="Manna Pro Select Series SHO bag" loading="lazy"></div>
+        <div class="card-body">
+          <p class="card-name">Manna Pro Select Series SHO</p>
+          <p class="card-sub">Show-specific formula</p>
+          <div class="card-stats">16.0% / 16%–21%* / 2.5%* &middot; ~3,000 IU/lb*</div>
+          <span class="card-label">Top 5 Ingredients</span>
+          <p class="card-field">Dehydrated Alfalfa Meal, Wheat Middlings, Soybean Hulls, Feeding Oatmeal, Soybean Meal</p>
+          <span class="card-label">Feeding Rate</span>
+          <p class="card-field"><em>No specific ounce amount published.</em> Free-choice or limit-fed to desired show condition.</p>
+          <a class="dealer-link" href="https://mannapro.com/pages/where-to-buy" target="_blank" rel="noopener">Find a Dealer &rarr;</a>
+        </div>
+      </div>
+      <div class="feed-card">
+        <div class="photo-wrap"><img src="https://www.belstramilling.com/app/uploads/2025/01/Heinold_Feeds__Commercial_Formula-1.png" alt="Heinold Commercial Formula bag" loading="lazy"></div>
+        <div class="card-body">
+          <p class="card-name">Heinold Commercial Formula</p>
+          <p class="card-sub">All-around, all life stages</p>
+          <div class="card-stats">16.0% / 20%–25% / 3.0% &middot; 2,200 IU/lb added</div>
+          <span class="card-label">Top 5 Ingredients</span>
+          <p class="card-field">Alfalfa Meal, Soybean Hulls, Wheat Middlings, Soybean Meal, Vegetable Oil</p>
+          <span class="card-label">Feeding Rate</span>
+          <p class="card-field"><em>No specific ounce amount published.</em> Feed as sole ration with fresh water; feed to condition.</p>
+          <a class="dealer-link" href="https://www.belstramilling.com/dealer-locator/" target="_blank" rel="noopener">Find a Dealer &rarr;</a>
+        </div>
+      </div>
+      <div class="feed-card">
+        <div class="photo-wrap"><img src="https://www.belstramilling.com/app/uploads/2025/01/Heinold_Feeds__Show_Formula-1.png" alt="Heinold Show Formula bag" loading="lazy"></div>
+        <div class="card-body">
+          <p class="card-name">Heinold Show Formula</p>
+          <p class="card-sub">Heinold's dedicated show ration</p>
+          <div class="card-stats">15.0% / 20%–25% / 3.0% &middot; 2,200 IU/lb added</div>
+          <span class="card-label">Top 5 Ingredients</span>
+          <p class="card-field">Alfalfa Meal (Dehydrated), Soybean Hulls, Wheat Middlings, Soybean Meal, Solvent Extracted Linseed Meal</p>
+          <span class="card-label">Feeding Rate</span>
+          <p class="card-field"><em>No specific ounce amount published.</em> Feed as sole ration with fresh water; feed to condition.</p>
+          <a class="dealer-link" href="https://www.belstramilling.com/dealer-locator/" target="_blank" rel="noopener">Find a Dealer &rarr;</a>
+        </div>
+      </div>
+      <div class="feed-card">
+        <div class="photo-wrap"><img src="https://kentfeeds.com/wp-content/uploads/B472_J9454_HomeFresh_50lb_ShowHutchDeluxe_Extruded_FRONT.jpg" alt="Blue Seal Show Hutch Deluxe 17 bag" loading="lazy"></div>
+        <div class="card-body">
+          <p class="card-name">Blue Seal Show Hutch Deluxe 17</p>
+          <p class="card-sub">Extruded, not pelleted</p>
+          <div class="card-stats">17.0% / 15%–20% / 3.5% &middot; 4,800 IU/lb</div>
+          <span class="card-label">Top 5 Ingredients</span>
+          <p class="card-field">Dehydrated Alfalfa Meal, Wheat Middlings, Soybean Hulls, Wheat Shorts, Soybean Meal</p>
+          <span class="card-label">Feeding Rate</span>
+          <p class="card-field">Medium breed: maintenance/show 3&ndash;6 oz/day (limit-fed); growth 4&ndash;8 oz/day; lactation 8&ndash;16 oz/day.</p>
+          <a class="dealer-link" href="https://kentfeeds.com/where-to-buy/" target="_blank" rel="noopener">Find a Dealer &rarr;</a>
+        </div>
+      </div>
+      <div class="feed-card">
+        <div class="photo-wrap"><img src="https://nutrenaworld.com/wp-content/uploads/2024/01/01_CF-Rabbit-Feed_Bag.jpg" alt="Nutrena Country Feeds 16% bag" loading="lazy"></div>
+        <div class="card-body">
+          <p class="card-name">Nutrena Country Feeds 16%</p>
+          <p class="card-sub">See naming note below**</p>
+          <div class="card-stats">16.0% / 14%–18% / 2.5% &middot; 3,000 IU/lb</div>
+          <span class="card-label">Top 5 Ingredients</span>
+          <p class="card-field">Wheat Middlings, Dehydrated Alfalfa Meal, Corn Gluten Feed, Rice Hulls, Corn Distillers Dried Grains with Solubles &mdash; leads with grain rather than forage (see caution note above)</p>
+          <span class="card-label">Feeding Rate</span>
+          <p class="card-field">Dry does/bucks: 4&ndash;6 oz/day. Does just kindling: 2&ndash;3 oz first day to free-choice within 4&ndash;5 days.</p>
+          <a class="dealer-link" href="https://www.nutrenaworld.com/dealer-locator" target="_blank" rel="noopener">Find a Dealer &rarr;</a>
+        </div>
+      </div>
+      <div class="feed-card">
+        <div class="photo-wrap"><img src="https://nutrenaworld.com/wp-content/uploads/2024/01/01_NW-Performance-Rabbit_Bag.jpg" alt="Nutrena NatureWise 18% Performance bag" loading="lazy"></div>
+        <div class="card-body">
+          <p class="card-name">Nutrena NatureWise 18% Performance</p>
+          <p class="card-sub">Nutrena's actual higher-protein line</p>
+          <div class="card-stats">18.0% / 17%–20% / 3.5% &middot; 3,600 IU/lb</div>
+          <span class="card-label">Top 5 Ingredients</span>
+          <p class="card-field">Dehydrated Alfalfa Meal, Wheat Middlings, Corn Distillers Dried Grains with Solubles, Rice Bran, Soybean Hulls</p>
+          <span class="card-label">Feeding Rate</span>
+          <p class="card-field">Dry does/bucks: 4&ndash;6 oz/day. Does just kindling: 2&ndash;3 oz first day to free-choice within 4&ndash;5 days.</p>
+          <a class="dealer-link" href="https://www.nutrenaworld.com/dealer-locator" target="_blank" rel="noopener">Find a Dealer &rarr;</a>
+        </div>
+      </div>
+      <div class="feed-card">
+        <div class="photo-wrap"><img src="https://nmrcdn.s3.amazonaws.com/legacy/62000/62750/web_rabbit1.jpg" alt="Pen Pals Professional Show Rabbit bag" loading="lazy"></div>
+        <div class="card-body">
+          <p class="card-name">Pen Pals Professional Show Rabbit</p>
+          <p class="card-sub">ADM Animal Nutrition</p>
+          <div class="card-stats">16.0% / 17.5%–22.5% / 3.5% &middot; 4,000 IU/lb</div>
+          <span class="card-label">Top 5 Ingredients</span>
+          <p class="card-field">Dehydrated Alfalfa Meal, Wheat Middlings, Soybean Hulls, Dehulled Soybean Meal, Cane Molasses</p>
+          <span class="card-label">Feeding Rate</span>
+          <p class="card-field">Bucks: 2&ndash;5 oz/day. Resting does: 3&ndash;6 oz/day. Gestating does: 4&ndash;7 oz/day.</p>
+          <a class="dealer-link" href="https://www.admanimalnutrition.com/webcenter/portal/ADMAnimalNutrition/pages_feed/dealerlocator" target="_blank" rel="noopener">Find a Dealer &rarr;</a>
+        </div>
+      </div>
+    </div>
+    <p class="table-footnote">*Fiber, fat, and vitamin A figures for the SHO formula reflect Manna Pro's published Select Series range rather than a SHO-specific panel; confirm the exact figures on the bag before purchasing, as formulas are occasionally updated.<br>**Nutrena's rabbit lineup only sells a 16% protein formula under its "Country Feeds" sub-brand — the "NatureWise" line comes in 15% and 18% versions, not a 16%. Listed here under its correct name, with its official guaranteed analysis and ingredient panel.<br>Feeding rates above are each manufacturer's own published directions, not our recommendation — some brands publish rates per pound of body weight while others publish flat ounces for a "medium breed," so figures aren't directly apples-to-apples across cards. Always defer to the directions printed on the actual bag. Dealer locators are each manufacturer's own store-finder tool; availability varies by region. Product photos are each manufacturer's own packaging images.</p>
+    <p class="table-footnote">*Fiber, fat, and vitamin A figures for the SHO formula reflect Manna Pro's published Select Series range rather than a SHO-specific panel; confirm the exact figures on the bag before purchasing, as formulas are occasionally updated.<br>**Nutrena's rabbit lineup only sells a 16% protein formula under its "Country Feeds" sub-brand — the "NatureWise" line comes in 15% and 18% versions, not a 16%. Listed here under its correct name, with its official guaranteed analysis and ingredient panel.<br>Feeding rates above are each manufacturer's own published directions, not our recommendation — note that some brands publish rates per pound of body weight while others publish flat ounces for a "medium breed," so figures aren't directly apples-to-apples across rows. Always defer to the directions printed on the actual bag, and adjust for your rabbit's condition as described in the FAQ below. Dealer locators are each manufacturer's own store-finder tool; availability varies by region.</p>
+
+    <div class="form-note"><strong>A note on pellets vs. extruded feed —</strong> most rabbit feed is pelleted: ground ingredients compressed under heat and pressure into a dense cylinder. Extruded feed, like Show Hutch Deluxe, is cooked under higher heat and pressure and puffed into a lighter nugget. Both forms can deliver identical nutrition; the difference is texture and eating speed, so it comes down to what your rabbits prefer and take to well.</div>
+  </section>
+
+  <div class="rule"></div>
+
+  <section id="rules-of-thumb">
+    <div class="section-head">
+      <span class="sec-num">05</span>
+      <span class="section-tag">Putting It Into Practice</span>
+      <h2>A Few Rules of Thumb</h2>
+      <p class="section-dek">Beyond the numbers, a handful of habits do more for a rabbit's condition than any single bag ever will.</p>
+    </div>
+
+    <ul class="thumb-list">
+      <li><strong>Buy fresh, buy small.</strong> Feed is a perishable product. Vitamin content drops the longer a bag sits, so buy only what your herd will finish in two to three months, and store it in a cool, dry place away from light.</li>
+      <li><strong>Transition slowly.</strong> Switch feeds over seven to ten days, mixing a little more of the new formula in each day. A sudden switch is one of the most common triggers for digestive upset in an otherwise healthy rabbit.</li>
+      <li><strong>Pair pellets with hay.</strong> Even a well-formulated pellet is meant to complement free-choice grass hay, not replace it. The long-strand fiber in hay does work that a pellet alone can't.</li>
+      <li><strong>Judge the whole bag, not one number.</strong> The best feed for your rabbitry balances protein, fiber, fat, and ingredient quality together — not whichever bag has the highest protein on the shelf.</li>
+    </ul>
+  </section>
+
+  <div class="rule"></div>
+
+  <section id="faq">
+    <div class="section-head">
+      <span class="sec-num">06</span>
+      <span class="section-tag">Common Questions</span>
+      <h2>FAQ</h2>
+      <p class="section-dek">The questions that come up most once someone actually starts comparing bags.</p>
+    </div>
+
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Do I need to feed hay if my rabbit is already eating one of these pellets?</summary>
+        <div class="faq-answer"><p>Most of these are labeled "complete feeds," meaning they're formulated to meet a rabbit's needs without hay. That said, offering free-choice grass hay alongside pellets is still worth doing: the long-strand fiber in hay does mechanical work — wearing teeth evenly and keeping the gut moving — that a compressed pellet can't fully replicate, no matter how high its fiber number is.</p></div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Is corn bad for rabbits?</summary>
+        <div class="faq-answer"><p>Not inherently — several of the feeds on this list include corn or corn byproducts with no issue, and it's a legitimate energy source. Some breeders prefer corn-free formulas out of concern for starch load or mold and mycotoxin risk in poorly stored grain, which is a reasonable preference rather than a food-safety requirement. If a rabbit is doing well on a corn-inclusive feed, there's no nutritional reason to switch.</p></div>
+      </details>
+
+      <details class="faq-item">
+        <summary>How much should I actually feed?</summary>
+        <div class="faq-answer"><p>Feeding rates vary by feed and by rabbit, but a common starting point across these brands is about 0.5 ounce of pellets per pound of body weight per day for a rabbit at maintenance — adjusted up for growth, lactation, or a rabbit running lean, and down for one carrying extra weight. Body condition, checked by hand, should drive the final amount more than any printed number.</p></div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Can I mix two different feeds together?</summary>
+        <div class="faq-answer"><p>It's better to pick one and transition fully rather than mix two feeds long-term. A slow transition over 7–10 days is meant to end with the rabbit fully on the new feed; feeding two formulas side by side indefinitely makes it hard to know which nutrient levels a rabbit is actually getting, and lets a rabbit selectively eat one over the other.</p></div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Do show rabbits need a different diet from pet rabbits?</summary>
+        <div class="faq-answer"><p>Not fundamentally — a healthy adult pet rabbit and a healthy adult show rabbit have the same underlying nutritional needs. What differs is condition management: show breeders are often fine-tuning fat and protein a little higher in the weeks before a show to influence coat and body condition, which is why several of the feeds above are explicitly meant to be limit-fed rather than left out free-choice.</p></div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Why does my rabbit's coat still look dull on a good feed?</summary>
+        <div class="faq-answer"><p>A dull coat can come from several places besides the feed itself: a stale bag (vitamin A and fat can degrade before the protein number does), an underlying health issue, or a normal seasonal molt — not a diet failure. Coat changes from a new feed also take several weeks to show up. If a coat stays dull for longer than a full molt cycle on a fresh, well-formulated feed, that's worth a vet visit rather than another feed swap.</p></div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Does a higher protein number always mean a better feed?</summary>
+        <div class="faq-answer"><p>No. Protein is one of four numbers that matter together, and a feed with a high protein number but a low fiber number is a specialized, limit-fed product — not automatically a "better" one. The right feed is the one whose whole profile, protein, fiber, fat, vitamin A, and ingredient quality together, matches what a specific rabbit needs.</p></div>
+      </details>
+
+      <details class="faq-item">
+        <summary>What if none of these twelve feeds are available near me?</summary>
+        <div class="faq-answer"><p>These twelve are widely distributed but not universal, and availability depends heavily on region. If none are carried locally, use this guide's guaranteed-analysis and ingredient-list principles to evaluate whatever your local feed store does carry — the physiology behind each number doesn't change from brand to brand.</p></div>
+      </details>
+    </div>
+  </section>
+  <div class="rule"></div>
+  <section class="sources">
+    <p class="disclaimer">This page is intended as general education on how to read a feed label, not as veterinary or nutritional advice for an individual rabbit. For a specific health, breeding, or diet concern, consult your veterinarian.</p>
+    <span class="section-tag" style="margin-bottom:14px; display:block;">Sources</span>
+    <ol>
+      <li>National Research Council nutrient requirements for rabbits, as summarized in Merck Veterinary Manual, "Nutrition of Rabbits" — <a href="https://www.merckvetmanual.com/exotic-and-laboratory-animals/rabbits/nutrition-of-rabbits" target="_blank" rel="noopener">merckvetmanual.com</a></li>
+      <li>Michigan State University Extension, "4-H Rabbit Tracks: Feeds and Feeding" — <a href="https://www.canr.msu.edu/uploads/resources/pdfs/4h1436_4-h_rabbittracks_feeds_and_feeding.pdf" target="_blank" rel="noopener">canr.msu.edu</a></li>
+      <li>Texas 4-H and Youth Development, "Rabbit Essentials" feeding guidelines</li>
+      <li>Akande, K.E., "The Requirements of Protein and Amino Acids in Rabbit Nutrition and Production" — <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3401687" target="_blank" rel="noopener">SSRN</a></li>
+      <li>Manufacturer guaranteed-analysis and ingredient panels: Purina Mills, Kalmbach Feeds, Manna Pro, Belstra Milling / Heinold&reg; Feeds, Kent Nutrition Group / Blue Seal, Cargill / Nutrena, and ADM Animal Nutrition / Pen Pals&reg;</li>
+      <li>Breeder-reported feed use, cross-checked against discussion on RabbitTalk.com and the rabbit-keeping forums at BackYardChickens.com</li>
+    </ol>
+    <p class="verified-line">Last verified against current manufacturer guaranteed-analysis panels and breeder discussion: August 2026.<br>Formulas are updated periodically by manufacturers — always confirm current figures against the tag on your own bag.<br><br>For general education only — not veterinary advice. CJM Legacy Rabbitry is not a veterinary practice; nothing here should be used to diagnose, treat, or make medical decisions for a rabbit. Needs vary by animal and formulas change over time, so confirm figures on the bag and consult a rabbit-savvy vet for your rabbit's specific needs.</p>
+  </section>
+
+</main>
+<!-- ============ END PAGE CONTENT ============ -->
+<div data-peer-review></div>
+
+<div id="site-footer"></div>
+<script src="js/layout.js"></script>
+</body>
+</html>

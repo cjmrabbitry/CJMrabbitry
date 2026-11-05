@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Why Buy From Us | CJM Legacy Rabbitry</title>
+<meta name="description" content="Why families and breeders choose CJM Legacy Rabbitry: pedigreed, health-recorded Holland Lops and Dwarf Hotots from an ARBA-member breeder in Southern Maryland.">
+<link rel="canonical" href="https://cjmrabbitry.com/why-buy">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="CJM Legacy Rabbitry">
+<meta property="og:title" content="Why Buy From Us | CJM Legacy Rabbitry">
+<meta property="og:description" content="Why families and breeders choose CJM Legacy Rabbitry: pedigreed, health-recorded Holland Lops and Dwarf Hotots from an ARBA-member breeder in Southern Maryland.">
+<meta property="og:url" content="https://cjmrabbitry.com/why-buy">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Jost:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/site.css">
+
+</head>
+<body>
+
+<div id="site-header"></div>
+
+<!-- ============ PAGE CONTENT (from Webflow embed) ============ -->
+<!-- ============================================================
+     CJM LEGACY RABBITRY — "WHY CHOOSE US" PAGE BODY
+     Drop this in place of the old hero/promise sections, between
+     your existing header and footer embeds. Fonts are already
+     loaded by your site header, so no extra <link> tags needed here.
+============================================================= -->
+
+<style>
+  :root{
+    --navy-900:#0C1830;
+    --navy-800:#142440;
+    --navy-700:#1D3357;
+    --cream:#F7F2E6;
+    --ivory:#FFFDF8;
+    --gold:#C6A15B;
+    --gold-light:#E5CD97;
+    --gold-deep:#B08535;
+    --ink:#142440;
+    --ink-soft:#5D6B7A;
+    --shadow: 0 24px 60px -20px rgba(12,24,48,0.35);
+
+    --f-display:'Fraunces', serif;
+    --f-heading:'Cormorant Garamond', serif;
+    --f-body:'Public Sans', sans-serif;
+    --f-ui:'Jost', sans-serif;
+    --f-mono:'JetBrains Mono', monospace;
+  }
+
+  .why-page{ background:var(--cream); overflow:hidden; }
+  .why-page *{ box-sizing:border-box; }
+
+  /* ---------- Hero intro ---------- */
+  .why-hero{
+    text-align:center;
+    padding:6.5rem 1.5rem 5rem;
+    max-width:44rem;
+    margin:0 auto;
+  }
+  .why-eyebrow{
+    display:inline-block;
+    font-family:var(--f-mono);
+    font-size:0.7rem;
+    font-weight:500;
+    letter-spacing:0.22em;
+    text-transform:uppercase;
+    color:var(--gold-deep);
+    margin:0 0 1.1rem;
+  }
+  .why-hero h1{
+    font-family:var(--f-display);
+    font-size:clamp(2.1rem,5vw,3.1rem);
+    font-weight:600;
+    color:var(--navy-900);
+    line-height:1.16;
+    letter-spacing:-0.02em;
+    margin:0 0 1.35rem;
+  }
+  .why-hero h1 em{ font-style:italic; color:var(--gold-deep); }
+  .why-hero p{
+    font-family:var(--f-body);
+    font-size:1.08rem;
+    line-height:1.7;
+    color:var(--ink-soft);
+    margin:0 0 1.75rem;
+  }
+  .why-rule{ width:2.5rem; height:2px; background:var(--gold); margin:0 auto; }
+
+  /* ---------- Feature rows ---------- */
+  .why-feature{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:4rem;
+    align-items:center;
+    max-width:72rem;
+    margin:0 auto;
+    padding:4.5rem 1.75rem;
+  }
+  .why-feature.alt{ background:var(--ivory); }
+  .why-feature.reverse .why-copy{ order:2; }
+  .why-feature.reverse .why-media{ order:1; }
+
+  .why-copy .why-eyebrow{ margin-bottom:0.85rem; }
+  .why-copy h2{
+    font-family:var(--f-heading);
+    font-weight:600;
+    font-size:clamp(1.6rem,3vw,2.15rem);
+    color:var(--navy-800);
+    line-height:1.22;
+    margin:0 0 1.1rem;
+  }
+  .why-copy p{
+    font-family:var(--f-body);
+    font-size:1.02rem;
+    line-height:1.75;
+    color:var(--ink-soft);
+    margin:0 0 1.1rem;
+  }
+  .why-copy p:last-child{ margin-bottom:0; }
+  .why-copy ul{ margin:0 0 1.1rem; padding:0 0 0 1.15rem; }
+  .why-copy li{
+    font-family:var(--f-body);
+    font-size:1.02rem;
+    line-height:1.75;
+    color:var(--ink-soft);
+  }
+
+  /* ---------- Media: real photo ---------- */
+  .why-media{ position:relative; }
+  .why-photo{
+    width:100%;
+    aspect-ratio:4/3;
+    object-fit:cover;
+    border-radius:14px;
+    box-shadow:var(--shadow);
+    display:block;
+  }
+  .why-media-caption{
+    font-family:var(--f-mono);
+    font-size:0.66rem;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:var(--gold-deep);
+    text-align:center;
+    margin-top:0.85rem;
+  }
+
+  /* ---------- Media: placeholder (until a real photo is added) ---------- */
+  .why-photo-placeholder{
+    width:100%;
+    aspect-ratio:4/3;
+    border-radius:14px;
+    border:1.5px dashed var(--gold);
+    background:
+      repeating-linear-gradient(135deg, rgba(198,161,91,0.07) 0 12px, transparent 12px 24px),
+      var(--navy-900);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:2rem;
+    gap:0.9rem;
+  }
+  .why-photo-placeholder svg{ width:34px; height:34px; color:var(--gold); opacity:0.85; }
+  .why-photo-placeholder .ph-label{
+    font-family:var(--f-ui);
+    font-size:0.78rem;
+    font-weight:500;
+    letter-spacing:0.04em;
+    color:var(--gold-light);
+  }
+  .why-photo-placeholder .ph-suggest{
+    font-family:var(--f-mono);
+    font-size:0.66rem;
+    letter-spacing:0.05em;
+    color:rgba(255,253,248,0.5);
+    max-width:16rem;
+  }
+
+  /* ---------- Promise / closing section ---------- */
+  .why-promise{
+    background:var(--navy-900);
+    padding:6rem 1.75rem;
+    border-bottom:1px solid rgba(198,161,91,0.2);
+  }
+  .why-promise-inner{
+    max-width:70rem;
+    margin:0 auto;
+    display:grid;
+    grid-template-columns:1.1fr 1fr;
+    gap:3.5rem;
+    align-items:start;
+  }
+  .why-promise .why-eyebrow{ color:var(--gold-light); }
+  .why-promise h2{
+    font-family:var(--f-heading);
+    font-weight:600;
+    font-size:clamp(1.9rem,4vw,2.5rem);
+    color:#FFFFFF;
+    line-height:1.22;
+    margin:0 0 1.25rem;
+  }
+  .why-promise h2 em{ font-style:italic; color:var(--gold); }
+  .why-promise-text p{
+    font-family:var(--f-body);
+    font-size:1rem;
+    line-height:1.7;
+    color:rgba(255,253,248,0.65);
+    margin:0 0 1rem;
+  }
+
+  .promise-card{
+    display:flex;
+    align-items:center;
+    gap:1.15rem;
+    padding-bottom:1.6rem;
+    margin-bottom:1.6rem;
+    border-bottom:1px solid rgba(198,161,91,0.22);
+  }
+  .promise-card .badge{
+    flex-shrink:0;
+    width:64px; height:64px;
+    border-radius:50%;
+    border:2px solid var(--gold);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .promise-card .badge svg{ width:24px; height:24px; }
+  .promise-card h3{
+    font-family:var(--f-heading);
+    font-weight:600;
+    color:#fff;
+    font-size:1.1rem;
+    margin:0 0 0.25rem;
+  }
+  .promise-card p{
+    font-family:var(--f-body);
+    color:rgba(255,253,248,0.55);
+    font-size:0.88rem;
+    margin:0;
+  }
+
+  .why-checklist{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:0.85rem; }
+  .why-checklist li{ display:flex; align-items:center; gap:1rem; }
+  .check-dot{
+    flex-shrink:0; width:30px; height:30px; border-radius:50%;
+    border:2px solid var(--gold);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .check-dot svg{ width:13px; height:13px; }
+  .why-checklist span{ font-family:var(--f-body); font-size:0.98rem; color:#fff; }
+
+  @media (max-width: 860px){
+    .why-feature, .why-promise-inner{ grid-template-columns:1fr; gap:2.25rem; }
+    .why-feature.reverse .why-copy, .why-feature.reverse .why-media{ order:0; }
+    .why-feature{ padding:3.25rem 1.5rem; }
+  }
+
+  @media (prefers-reduced-motion: no-preference){
+    .why-reveal{ opacity:0; transform:translateY(18px); transition:opacity .7s ease, transform .7s ease; }
+    .why-reveal.in{ opacity:1; transform:translateY(0); }
+  }
+</style>
+
+<div class="why-page">
+
+  <!-- HERO -->
+  <div class="why-hero why-reveal">
+    <p class="why-eyebrow">Why Choose CJM?</p>
+    <h1>More than a rabbit —<br><em>a lifetime companion.</em></h1>
+    <p>Every bunny is intentionally bred, hand raised, and lovingly socialized to become a cherished member of your family.</p>
+    <div class="why-rule"></div>
+  </div>
+
+<!-- 01 — QUALITY & INTEGRITY -->
+  <section class="why-feature why-reveal">
+    <div class="why-copy">
+      <p class="why-eyebrow">01 — Quality &amp; Integrity</p>
+      <h2>A Foundation of Quality, Care, and Integrity</h2>
+      <p>Choosing a rabbit is about more than finding the right color or markings — it's about choosing a breeder you can trust.</p>
+      <p>At CJM Legacy Rabbitry, every rabbit begins with thoughtful planning, responsible breeding, and hands-on care from the day it is born. We are dedicated to raising exceptional Holland Lops that exemplify the breed in both beauty and temperament while giving each rabbit the strongest possible start in life.</p>
+      <p>Whether you're welcoming a cherished family companion, searching for a promising show prospect, or adding to an established breeding program, we strive to produce rabbits that reflect the quality and care our rabbitry stands for.</p>
+    </div>
+    <div class="why-media">
+      <img class="why-photo" src="https://cdn.prod.website-files.com/6a64d7bd9e493edffe36e166/6a7665f43d4cdaf68cbbd0d8_uploads%252F8F1071D9-5527-48BD-8E7E-BA7CA78DF28B.png" alt="describe what's in the photo here" />
+    </div>
+  </section>
+
+  <!-- 02 — EARLY DEVELOPMENT -->
+  <section class="why-feature alt reverse why-reveal">
+    <div class="why-copy">
+      <p class="why-eyebrow">02 — Early Development</p>
+      <h2>Raised With Purpose From Day One</h2>
+      <p>Every rabbit born at CJM Legacy Rabbitry is raised with individual attention from birth.</p>
+      <p>From their earliest days, our babies receive gentle daily handling and are cared for in a family environment where they become accustomed to regular human interaction, everyday household activity, and the routines of daily life.</p>
+      <p>These early experiences help foster confidence and curiosity while allowing each rabbit's unique personality to develop naturally.</p>
+    </div>
+      <img class="why-photo" src="https://i.ibb.co/BVMMSmF9/c7f4aa30d7577f4b21526b27ab28a0d3.jpg" />
+    </div></section>
+
+  <!-- 03 — FAMILY SOCIALIZATION (real photo) -->
+  <section class="why-feature why-reveal">
+    <div class="why-copy">
+      <p class="why-eyebrow">03 — Family Socialization</p>
+      <h2>A Family-Raised Beginning</h2>
+      <p>Our rabbitry is an active part of our home, not a separate production facility.</p>
+      <p>Because our rabbits are regularly handled by children under adult supervision, they become familiar with gentle interaction from people of different ages. They are also raised around well-mannered household dogs, giving them early exposure to the sights and sounds common in many family homes.</p>
+      <p>While every rabbit is an individual and introductions to new environments should always be gradual, we believe thoughtful socialization during their early weeks helps prepare them for a successful transition to their new homes.</p>
+    </div>
+    <div class="why-media">
+      <img class="why-photo" src="https://i.ibb.co/XrDMHcZg/Chat-GPT-Image-Aug-8-2026-04-02-04-PM.png" alt="A young child gently cuddling a fawn Holland Lop rabbit on a porch, with a white shed and garden in the background" />
+    </div>
+  </section>
+
+  <!-- 04 — RESPONSIBLE BREEDING -->
+  <section class="why-feature alt reverse why-reveal">
+    <div class="why-copy">
+      <p class="why-eyebrow">04 — Responsible Breeding</p>
+      <h2>Thoughtfully Planned Breeding</h2>
+      <p>Every breeding at CJM Legacy Rabbitry begins with a purpose.</p>
+      <p>We carefully evaluate each pairing with the goal of preserving and improving the Holland Lop breed by emphasizing:</p>
+      <ul>
+        <li>Excellent breed type</li>
+        <li>Sound structure</li>
+        <li>Friendly, confident temperaments</li>
+        <li>Strong overall health</li>
+        <li>Quality pedigrees</li>
+        <li>Beautiful and intentional color genetics</li>
+      </ul>
+      <p>Our focus is always on quality — not quantity. Each litter represents months of planning and a long-term commitment to the future of our breeding program.</p>
+    </div>
+    <div class="why-media">
+      <img class="why-photo" src="https://i.ibb.co/YF1nYQ3c/Untitled.png" alt="A young child gently cuddling a fawn Holland Lop rabbit on a porch, with a white shed and garden in the background" />
+    </div>
+  </section>
+
+  <!-- 05 — MATURITY & READINESS -->
+  <section class="why-feature why-reveal">
+    <div class="why-copy">
+      <p class="why-eyebrow">05 — Maturity &amp; Readiness</p>
+      <h2>Ready Before They Leave</h2>
+      <p>We believe rabbits should leave for their new homes only when they are truly ready.</p>
+      <p>Our rabbits remain with us until they are fully weaned, eating independently, and confidently thriving on their own. Before being made available, each rabbit is carefully evaluated for overall health, condition, temperament, and development.</p>
+      <p>By allowing every rabbit the time it needs to mature, we can confidently place healthy, well-started rabbits with their new families and fellow breeders.</p>
+    </div>
+ <div class="why-media">
+      <img class="why-photo" src="https://i.ibb.co/8n29zKnr/5787e843-6734-4ca4-b599-4bcce09574fa.png" alt="A young child gently cuddling a fawn Holland Lop rabbit on a porch, with a white shed and garden in the background" />
+    </div>
+  </section>
+
+  <!-- 06 — TRANSPARENT SUPPORT -->
+  <section class="why-feature alt reverse why-reveal">
+    <div class="why-copy">
+      <p class="why-eyebrow">06 — Transparent Support</p>
+      <h2>Honest Guidance</h2>
+      <p>Choosing the right rabbit is an important decision, and we're committed to helping you make it with confidence.</p>
+      <p>We're always happy to discuss:</p>
+      <ul>
+        <li>The strengths and characteristics of each rabbit</li>
+        <li>Parent information and pedigrees, when available</li>
+        <li>Temperament and personality</li>
+        <li>Whether a rabbit may be best suited for a pet, show, or breeding home</li>
+        <li>General rabbit care and husbandry</li>
+      </ul>
+      <p>We believe honest communication and realistic expectations create the best experience for both our buyers and our rabbits.</p>
+    </div>
+ <div class="why-media">
+      <img class="why-photo" src="https://i.ibb.co/chg0gx4Q/unnamed-1.jpg" alt="A young child gently cuddling a fawn Holland Lop rabbit on a porch, with a white shed and garden in the background" />
+    </div>
+  </section>
+
+  <!-- 07 — LIFETIME COMMITMENT -->
+  <section class="why-feature why-reveal">
+    <div class="why-copy">
+      <p class="why-eyebrow">07 — Lifetime Commitment</p>
+      <h2>Our Commitment Doesn't End at Pickup</h2>
+      <p>Whether this is your first rabbit or you've been raising rabbits for years, we're always happy to be a resource.</p>
+      <p>We're available to answer questions about nutrition, housing, grooming, genetics, breeding, showing, and general rabbit care whenever we can. We enjoy building lasting relationships with the families and breeders who choose rabbits from CJM Legacy Rabbitry and are always excited to see our rabbits thrive in their new homes.</p>
+    </div>
+   <div class="why-media">
+      <img class="why-photo" src="https://i.ibb.co/vCtg5D1t/181e7ff8-ffa3-42da-9016-0b4d9d140ab5.png" alt="A young child gently cuddling a fawn Holland Lop rabbit on a porch, with a white shed and garden in the background" />
+    </div>
+  </section>
+
+  <!-- OUR PROMISE (closing) -->
+  <section class="why-promise why-reveal">
+    <div class="why-promise-inner">
+      <div class="why-promise-text">
+        <p class="why-eyebrow">Our Promise</p>
+        <h2>Every rabbit leaves with<br>the very best start in <em>life.</em></h2>
+        <p>We don't just breed rabbits — we raise family members. From the moment a kit is born to the day it goes home with you, it is held, loved, and given every advantage we can offer.</p>
+        <p>That commitment doesn't end at pick-up day. We offer lifetime support for every family who chooses a CJM rabbit.</p>
+      </div>
+
+      <div>
+        <div class="promise-card">
+          <div class="badge">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M4 12.5L9 17.5L20 6.5" stroke="#C6A15B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div>
+            <h3>CJM Legacy Rabbitry</h3>
+            <p>Every kit hand raised with intention and love.</p>
+          </div>
+        </div>
+
+        <ul class="why-checklist">
+          <li><div class="check-dot"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12.5L9 17.5L20 6.5" stroke="#C6A15B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span>Hand raised from birth</span></li>
+          <li><div class="check-dot"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12.5L9 17.5L20 6.5" stroke="#C6A15B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span>Handled every single day</span></li>
+          <li><div class="check-dot"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12.5L9 17.5L20 6.5" stroke="#C6A15B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span>Socialized with children</span></li>
+          <li><div class="check-dot"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12.5L9 17.5L20 6.5" stroke="#C6A15B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span>Raised around dogs</span></li>
+          <li><div class="check-dot"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12.5L9 17.5L20 6.5" stroke="#C6A15B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span>Carefully bred for health, temperament &amp; type</span></li>
+          <li><div class="check-dot"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12.5L9 17.5L20 6.5" stroke="#C6A15B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span>Lifetime support for every family</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+<script>
+  (function(){
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var els = document.querySelectorAll('.why-reveal');
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }
+      });
+    }, { threshold: 0.15 });
+    els.forEach(function(el){ io.observe(el); });
+  })();
+</script>
+<!-- ============ END PAGE CONTENT ============ -->
+
+
+<div id="site-footer"></div>
+<script src="js/layout.js"></script>
+</body>
+</html>

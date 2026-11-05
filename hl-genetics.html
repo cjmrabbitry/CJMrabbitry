@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Holland Lop Genetics 101 | CJM Legacy Rabbitry</title>
+<meta name="description" content="A beginner&#x27;s guide to Holland Lop color genetics: the five color genes, how they&#x27;re inherited, and what they mean for your litters.">
+<link rel="canonical" href="https://cjmrabbitry.com/hl-genetics">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="CJM Legacy Rabbitry">
+<meta property="og:title" content="Holland Lop Genetics 101 | CJM Legacy Rabbitry">
+<meta property="og:description" content="A beginner&#x27;s guide to Holland Lop color genetics: the five color genes, how they&#x27;re inherited, and what they mean for your litters.">
+<meta property="og:url" content="https://cjmrabbitry.com/hl-genetics">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Jost:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/site.css">
+
+</head>
+<body>
+
+<div id="site-header"></div>
+
+<!-- ============ PAGE CONTENT (from Webflow embed) ============ -->
+<!-- ═══════════════════════════════════════════════════════
+     BOX 1 of 2 — paste this in the FIRST/top HTML box.
+     Contains: fonts, all shared styles, breadcrumb, reading
+     progress tracker, hero, table of contents, and sections
+     01–06 (Key terms through Why lop ears aren't a gene).
+════════════════════════════════════════════════════════ -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Public+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --navy:    #0B2239;
+  --navy-2:  #15395B;
+  --gold:    #B08535;
+  --gold-lt: #D9B96A;
+  --cream:   #F6F1E6;
+  --paper:   #FCFAF4;
+  --slate:   #5D6B7A;
+  --rule:    rgba(11,34,57,.13);
+  --loc-a: #B08535;
+  --loc-b: #6B4423;
+  --loc-c: #78889A;
+  --loc-d: #3E6E9E;
+  --loc-e: #C0651C;
+  --content-max: 52rem;
+  --text-max:    42rem;
+  --gap:         1.5rem;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { animation: none !important; transition: none !important; }
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--navy);
+  font-family: "Public Sans", system-ui, -apple-system, sans-serif;
+  font-size: 17px;
+  line-height: 1.72;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 { font-family: "Fraunces", Georgia, serif; font-weight: 600; line-height: 1.15; margin: 0; }
+h2 { font-size: clamp(1.55rem, 4vw, 2rem); letter-spacing: -.015em; }
+h3 { font-size: 1.1rem; margin: 0 0 .25rem; }
+p { margin: 0 0 1.1rem; }
+p:last-child { margin-bottom: 0; }
+a { color: var(--navy-2); }
+
+.eyebrow {
+  font-family: "JetBrains Mono", monospace; font-size: .68rem; font-weight: 700; letter-spacing: .16em;
+  text-transform: uppercase; color: var(--gold); margin: 0 0 .5rem; display: block;
+}
+
+code.g {
+  font-family: "JetBrains Mono", monospace; font-size: .88em; font-weight: 500; background: var(--cream);
+  padding: .1em .35em; border-radius: 2px; white-space: nowrap;
+}
+sub { font-size: .72em; }
+
+/* Breadcrumb */
+.breadcrumb-bar{ background: var(--navy); padding: 12px 0; }
+.breadcrumb{
+  max-width: var(--content-max); margin: 0 auto; padding: 0 var(--gap);
+  font-family: "JetBrains Mono", monospace; font-size: 12px; letter-spacing: .03em;
+  color: rgba(246,241,230,.6);
+}
+.breadcrumb a{ color: rgba(246,241,230,.85); text-decoration: none; }
+.breadcrumb a:hover{ color: var(--gold-lt); }
+.breadcrumb .sep{ margin: 0 8px; opacity: .5; }
+.breadcrumb .current{ color: var(--gold-lt); }
+
+/* Reading progress — tracks the FULL page (both boxes) */
+#progress-wrap{ position: sticky; top: 0; left: 0; width: 100%; height: 4px; z-index: 200; background: rgba(11,34,57,.08); }
+#progress-bar{ height: 100%; width: 0%; background: linear-gradient(90deg, var(--gold), var(--gold-lt)); transition: width .08s linear; }
+#progress-pct{
+  position: fixed; top: 16px; left: 16px; z-index: 200;
+  font-family: "JetBrains Mono", monospace; font-size: 11px; letter-spacing: .06em;
+  background: var(--paper); color: var(--navy); border: 1px solid var(--rule);
+  padding: 5px 9px; border-radius: 20px; opacity: 0; transform: translateY(-6px);
+  transition: opacity .3s ease, transform .3s ease; pointer-events: none;
+}
+#progress-pct.show{ opacity: 1; transform: translateY(0); }
+
+.wrap { max-width: var(--content-max); margin: 0 auto; padding: 0 var(--gap); }
+.prose { max-width: var(--text-max); }
+
+.hero { background: var(--navy); color: var(--cream); padding: clamp(3rem, 8vw, 4.5rem) 0 clamp(2.8rem, 7vw, 4rem); border-bottom: 4px solid var(--gold); }
+.hero .eyebrow { color: var(--gold-lt); }
+.hero h1 { font-size: clamp(2.1rem, 7vw, 3.5rem); color: #fff; margin: 0 0 1rem; max-width: 22rem; }
+.hero h1 em { font-style: italic; color: var(--gold-lt); }
+.lede { font-size: 1.05rem; color: rgba(246,241,230,.8); margin: 0 0 2.2rem; max-width: 34rem; line-height: 1.65; }
+.hero-note { font-size: .88rem; color: rgba(246,241,230,.55); border-left: 2px solid var(--gold); padding-left: .9rem; margin: 0; max-width: 32rem; line-height: 1.6; }
+
+.strip { display: flex; flex-wrap: wrap; gap: .45rem; margin: 0 0 1.4rem; }
+.slot {
+  --c: var(--gold); min-width: 3.6rem; padding: .6rem .55rem .5rem; border: 1px solid var(--c);
+  border-top: 3px solid var(--c); border-radius: 3px; text-align: center; background: rgba(255,255,255,.05);
+  animation: rise .45s cubic-bezier(.2,.7,.3,1) backwards;
+}
+.slot:nth-child(1) { animation-delay: .05s; }
+.slot:nth-child(2) { animation-delay: .12s; }
+.slot:nth-child(3) { animation-delay: .19s; }
+.slot:nth-child(4) { animation-delay: .26s; }
+.slot:nth-child(5) { animation-delay: .33s; }
+@keyframes rise { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+.slot b { display: block; font-family: "JetBrains Mono", monospace; font-weight: 700; font-size: 1.2rem; line-height: 1.1; color: #fff; }
+.slot span { display: block; font-size: .57rem; letter-spacing: .12em; text-transform: uppercase; margin-top: .3rem; color: rgba(246,241,230,.58); }
+.slot.a { --c: var(--loc-a); } .slot.b { --c: var(--loc-b); } .slot.c { --c: var(--loc-c); } .slot.d { --c: var(--loc-d); } .slot.e { --c: var(--loc-e); }
+.strip--lt .slot { background: #fff; }
+.strip--lt .slot b { color: var(--navy); }
+.strip--lt .slot span { color: var(--slate); }
+
+.toc { background: var(--cream); padding: 2.2rem 0 2.4rem; border-bottom: 1px solid var(--rule); }
+.toc ol { margin: 0; padding: 0; list-style: none; counter-reset: toc; columns: 2; column-gap: 2rem; }
+@media (max-width: 500px) { .toc ol { columns: 1; } }
+.toc li { counter-increment: toc; break-inside: avoid; margin: 0 0 .45rem; font-size: .93rem; }
+.toc li::before { content: counter(toc, decimal-leading-zero); font-family: "JetBrains Mono", monospace; font-size: .68rem; color: var(--gold); margin-right: .55rem; }
+.toc a { color: var(--navy); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color .15s; }
+.toc a:hover, .toc a:focus { border-bottom-color: var(--gold); }
+
+section { padding: clamp(2.8rem, 7vw, 4rem) 0; border-bottom: 1px solid var(--rule); }
+section:last-of-type { border-bottom: 0; }
+.sec-head { margin: 0 0 1.8rem; }
+.sec-head h2 { margin-bottom: .45rem; }
+.sec-head .sub { color: var(--slate); margin: 0; font-size: .97rem; max-width: var(--text-max); line-height: 1.55; }
+
+ul.plain { margin: 0 0 1.2rem; padding-left: 1.3rem; max-width: var(--text-max); }
+ul.plain li { margin: 0 0 .65rem; line-height: 1.65; }
+
+.note { background: var(--cream); border-left: 3px solid var(--gold); padding: 1.1rem 1.25rem; margin: 1.6rem 0; font-size: .95rem; max-width: var(--text-max); line-height: 1.65; }
+.note p { margin: 0 0 .7rem; }
+.note p:last-child { margin-bottom: 0; }
+.note strong { font-family: "Fraunces", Georgia, serif; font-weight: 600; }
+.note.warn { border-left-color: #9C3B2E; background: #FBF0EE; }
+
+.locus { --c: var(--gold); border-left: 3px solid var(--c); padding: .2rem 0 .2rem 1.2rem; margin: 0 0 2.4rem; max-width: var(--text-max); }
+.locus.a { --c: var(--loc-a); } .locus.b { --c: var(--loc-b); } .locus.c { --c: var(--loc-c); } .locus.d { --c: var(--loc-d); } .locus.e { --c: var(--loc-e); } .locus.nav { --c: var(--navy); }
+.locus-tag { font-family: "JetBrains Mono", monospace; font-weight: 700; font-size: .68rem; letter-spacing: .14em; text-transform: uppercase; color: var(--c); margin: 0 0 .2rem; display: block; }
+.locus .gene { font-size: .83rem; color: var(--slate); margin: 0 0 .8rem; line-height: 1.4; }
+.domline { font-family: "JetBrains Mono", monospace; font-size: .8rem; font-weight: 700; background: var(--cream); border: 1px solid var(--rule); border-radius: 3px; padding: .45rem .7rem; display: inline-block; margin: 0 0 .3rem; color: var(--navy); }
+.alleles { margin: .9rem 0 0; padding: 0; list-style: none; border-top: 1px solid var(--rule); }
+.alleles li { display: grid; grid-template-columns: 5rem 1fr; gap: 0 1.1rem; align-items: start; padding: .65rem 0; border-bottom: 1px solid var(--rule); }
+.alleles code { font-family: "JetBrains Mono", monospace; font-weight: 700; font-size: .9rem; color: var(--c); padding-top: .05rem; }
+.alleles em { font-style: normal; font-weight: 600; display: block; margin-bottom: .15rem; line-height: 1.3; }
+.alleles span { color: var(--slate); font-size: .91rem; line-height: 1.6; }
+
+.punnett-tool { background: var(--cream); border: 1px solid var(--rule); border-radius: 3px; padding: 1.4rem; margin: 1.8rem 0; max-width: 34rem; }
+.pchoice { display: flex; flex-wrap: wrap; gap: .5rem; margin: 0 0 1.2rem; }
+.pchoice button { font-family: "Public Sans", sans-serif; font-size: .83rem; font-weight: 500; background: #fff; border: 1px solid var(--rule); color: var(--navy); padding: .5rem .85rem; border-radius: 2px; cursor: pointer; transition: background .15s, color .15s; }
+.pchoice button[aria-pressed="true"] { background: var(--navy); color: #fff; border-color: var(--navy); }
+.pchoice button:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+table.pun { border-collapse: collapse; width: 100%; max-width: 18rem; font-family: "JetBrains Mono", monospace; font-size: .83rem; font-weight: 700; }
+table.pun td, table.pun th { border: 1px solid var(--rule); padding: .6rem .5rem; text-align: center; background: #fff; }
+table.pun th { background: var(--navy); color: #fff; }
+td.true    { background: #E8F0E6; color: #2F5D2A; }
+td.false   { background: #EDEFF2; color: var(--navy); }
+td.peanut  { background: #FBF0EE; color: #9C3B2E; }
+.pout { margin: 1rem 0 0; font-size: .92rem; color: var(--slate); line-height: 1.6; }
+.pout strong { color: var(--navy); }
+
+.tablewrap { overflow-x: auto; margin: 1.4rem 0 0; -webkit-overflow-scrolling: touch; border-radius: 2px; }
+table.var { border-collapse: collapse; width: 100%; font-size: .87rem; min-width: 34rem; }
+table.var caption { text-align: left; font-size: .78rem; color: var(--slate); padding: 0 0 .6rem; line-height: 1.5; }
+table.var th { text-align: left; font-size: .68rem; letter-spacing: .12em; text-transform: uppercase; color: var(--slate); font-weight: 600; border-bottom: 2px solid var(--navy); padding: .5rem .75rem .5rem 0; }
+table.var th:first-child { padding-left: .75rem; }
+table.var td { border-bottom: 1px solid var(--rule); padding: .65rem .75rem .65rem 0; vertical-align: top; line-height: 1.55; }
+table.var td:first-child { font-weight: 600; padding-left: .75rem; white-space: nowrap; }
+td.geno { font-family: "JetBrains Mono", monospace; font-size: .8rem; white-space: nowrap; color: var(--navy-2); }
+.grouphead td { background: var(--navy); color: #fff; font-family: "Fraunces", Georgia, serif; font-weight: 600; font-size: .93rem; padding: .5rem .75rem; letter-spacing: .01em; }
+.grouphead td span { font-family: "Public Sans", sans-serif; font-weight: 400; font-size: .76rem; color: rgba(255,255,255,.62); margin-left: .6rem; }
+
+/* FAQ (used in box 2, styles included here since this box loads first) */
+.faq { max-width: var(--text-max); }
+.faq-item { border-top: 1px solid var(--rule); }
+.faq-item:last-of-type { border-bottom: 1px solid var(--rule); }
+.faq-item summary { padding: 1.1rem 0; font-weight: 600; line-height: 1.5; cursor: pointer; list-style: none; display: flex; align-items: flex-start; gap: .7rem; color: var(--navy); }
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::before { content: '+'; font-family: "JetBrains Mono", monospace; color: var(--gold); font-weight: 700; flex-shrink: 0; width: 1rem; }
+.faq-item[open] summary::before { content: '–'; }
+.faq-item .a { color: var(--slate); font-size: .95rem; line-height: 1.65; padding: 0 0 1.2rem 1.7rem; margin: 0; }
+
+/* Sources + footer (used in box 2, styles included here since this box loads first) */
+.sources { background: var(--navy); color: rgba(246,241,230,.82); padding: clamp(2.8rem, 7vw, 4rem) 0 3.2rem; }
+.sources h2 { color: #fff; }
+.sources .eyebrow { color: var(--gold-lt); }
+.sources .sub { color: rgba(246,241,230,.6); max-width: var(--text-max); line-height: 1.65; margin: .5rem 0 1.6rem; }
+.sources ol { padding-left: 1.3rem; font-size: .9rem; line-height: 1.65; max-width: var(--text-max); }
+.sources li { margin: 0 0 .75rem; }
+.sources a { color: var(--gold-lt); word-break: break-word; }
+.sources .note { background: rgba(246,241,230,.07); border-left-color: var(--gold-lt); max-width: var(--text-max); }
+.sources .note p { color: rgba(246,241,230,.85); }
+.sources .note strong { color: #fff; }
+
+footer.sig { background: var(--navy); color: rgba(246,241,230,.38); padding: 0 0 3rem; font-size: .77rem; letter-spacing: .02em; }
+footer.sig .rule { height: 1px; background: rgba(246,241,230,.12); margin: 0 0 1.3rem; }
+
+:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+</style>
+<div id="progress-wrap"><div id="progress-bar"></div></div>
+<div id="progress-pct">0%</div>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">A beginner's guide</p>
+    <h1>Every bunny's color is <em>five little letters</em>.</h1>
+    <p class="lede">Learn to read them and a pedigree becomes a forecast of what's waiting in the nest box. No science background needed — promise.</p>
+    <div class="strip" aria-label="Example genotype: black tortoise">
+      <div class="slot a"><b>aa</b><span>A · pattern</span></div>
+      <div class="slot b"><b>B_</b><span>B · base</span></div>
+      <div class="slot c"><b>C_</b><span>C · pigment</span></div>
+      <div class="slot d"><b>D_</b><span>D · density</span></div>
+      <div class="slot e"><b>ee</b><span>E · extension</span></div>
+    </div>
+    <p class="hero-note">That string is a black tortoise — the most common color in the breed. By the end of this page, you'll read it like a word.</p>
+  </div>
+</header>
+
+<nav class="toc" aria-label="Page contents">
+  <div class="wrap">
+    <span class="eyebrow">What we'll cover</span>
+    <ol>
+      <li><a href="#words">Key terms</a></li>
+      <li><a href="#reading">Reading a genotype</a></li>
+      <li><a href="#five">The five color genes</a></li>
+      <li><a href="#others">A few more helpful genes</a></li>
+      <li><a href="#dwarf">The dwarf gene &amp; peanuts</a></li>
+      <li><a href="#ears">Why lop ears aren't a gene</a></li>
+      <li><a href="#varieties">Recognized varieties</a></li>
+      <li><a href="#pairings">Pairings to think twice about</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#sources">Sources</a></li>
+    </ol>
+  </div>
+</nav>
+
+<section id="words">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">01</span>
+      <h2>Key terms</h2>
+      <p class="sub">Eight words. Everything else on this page is built from them.</p>
+    </div>
+    <ul class="plain">
+      <li><strong>Gene</strong> — a unit of inheritance. Each kit gets one copy from dad, one from mom.</li>
+      <li><strong>Locus</strong> — the fixed address on the chromosome where a gene lives (plural: loci). Color genetics is mostly a conversation about five addresses.</li>
+      <li><strong>Allele</strong> — one of the possible versions of a gene at that address.</li>
+      <li><strong>Dominant</strong> — shows up even with only one copy. Written with a capital letter.</li>
+      <li><strong>Recessive</strong> — hides behind a dominant allele; needs two copies to show. Written lowercase.</li>
+      <li><strong>Homozygous</strong> — two identical copies: <code class="g">AA</code> or <code class="g">aa</code>.</li>
+      <li><strong>Heterozygous</strong> — two different copies: <code class="g">Aa</code>. The bunny shows the dominant one and silently carries the other.</li>
+      <li><strong>Genotype / phenotype</strong> — genotype is the code inside; phenotype is what you see when you pick her up. Shows judge the outside; breeders plan with the inside.</li>
+    </ul>
+    <div class="note">
+      <p><strong>The rule that saves the most confusion.</strong> If a bunny shows the most recessive version of a gene, she can't be hiding something louder at that same address. A ruby-eyed white is <code class="g">cc</code> — she can't secretly carry chinchilla, sable, or pointed, because those alleles live at the exact spot her two <code class="g">c</code>'s already fill. She can carry plenty at the other four addresses, though!</p>
+    </div>
+  </div>
+</section>
+
+<section id="reading">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">02</span>
+      <h2>Reading a genotype</h2>
+      <p class="sub">Five slots, always in the same order: A &middot; B &middot; C &middot; D &middot; E.</p>
+    </div>
+    <p class="prose">A genotype is five pairs of letters — one pair per address, always alphabetical. Here's a chestnut, the wild-type color every other Holland variety is a twist on:</p>
+    <div class="strip strip--lt" aria-label="Chestnut genotype">
+      <div class="slot a"><b>A_</b><span>agouti</span></div>
+      <div class="slot b"><b>B_</b><span>black base</span></div>
+      <div class="slot c"><b>C_</b><span>full color</span></div>
+      <div class="slot d"><b>D_</b><span>dense</span></div>
+      <div class="slot e"><b>E_</b><span>full ext.</span></div>
+    </div>
+    <p class="prose">The underscore means <em>the dominant allele is there, but we don't know the second one yet.</em> You find out two ways: read the pedigree, or let the babies tell you. If that chestnut throws a blue tortoise kit, you've just confirmed she was <code class="g">Aa B_ C_ Dd Ee</code> all along — nothing changed, you just got to see more of her.</p>
+    <div class="note">
+      <p><strong>Why the letters make sense.</strong> Rabbits make only two pigments: a dark one (eumelanin — black or chocolate) and a yellow-red one (pheomelanin — orange, fawn, cream). Not one of these five genes invents a new color. Each one decides where those two pigments go, how much is made, and how tightly it's packed. That's the whole system.</p>
+    </div>
+  </div>
+</section>
+
+<section id="five">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">03</span>
+      <h2>The five color genes</h2>
+      <p class="sub">Listed loudest-first at each address. <code class="g">&gt;</code> means "beats."</p>
+    </div>
+
+    <div class="locus a">
+      <span class="locus-tag">A · locus</span>
+      <h3>Pattern — where the color sits on each hair</h3>
+      <p class="gene">Agouti signalling protein (ASIP)</p>
+      <p class="domline">A &gt; a<sup>t</sup> &gt; a</p>
+      <ul class="alleles">
+        <li><code>A</code><div><em>Agouti</em><span>Each hair is banded — dark tip, lighter middle band, slate underneath. Light eye circles, nostrils, inside ears, belly, and undertail. Chestnut, chinchilla, opal, squirrel, and lynx all live here.</span></div></li>
+        <li><code>a<sup>t</sup></code><div><em>Tan pattern</em><span>Solid body with tan or fawn trim on the belly, eye circles, nostrils, jowls, and inside ears. These are your otters.</span></div></li>
+        <li><code>a</code><div><em>Self</em><span>One color, head to tail. Black, blue, chocolate, lilac — and (this surprises everyone) every tortoise.</span></div></li>
+      </ul>
+    </div>
+
+    <div class="locus b">
+      <span class="locus-tag">B · locus</span>
+      <h3>Base color — black or brown</h3>
+      <p class="gene">Tyrosinase-related protein 1 (TYRP1)</p>
+      <p class="domline">B &gt; b</p>
+      <ul class="alleles">
+        <li><code>B</code><div><em>Black base</em><span>The original. One copy is all it takes.</span></div></li>
+        <li><code>b</code><div><em>Chocolate base</em><span>Needs two copies. Turns all dark pigment brown and softens eye color. The only route to chocolate, lilac, chocolate agouti, and chocolate chinchilla.</span></div></li>
+      </ul>
+      <p style="font-size:.9rem;color:var(--slate);margin-top:.9rem;line-height:1.6;">Every rabbit alive is either black-based or chocolate-based — nothing else exists at this address.</p>
+    </div>
+
+    <div class="locus c">
+      <span class="locus-tag">C · locus</span>
+      <h3>Pigment — the volume knob</h3>
+      <p class="gene">Tyrosinase (TYR)</p>
+      <p class="domline">C &gt; c<sup>chd</sup> &gt; c<sup>chl</sup> &gt; c<sup>h</sup> &gt; c</p>
+      <ul class="alleles">
+        <li><code>C</code><div><em>Full color</em><span>Both pigments at full volume. Color is decided entirely by A, B, D, and E.</span></div></li>
+        <li><code>c<sup>chd</sup></code><div><em>Chinchilla (dark)</em><span>Strips nearly all yellow pigment, leaving the dark. On an agouti coat the orange band turns white — that's your chinchilla. Add non-extension (<code class="g">ee</code>) and you get frosty.</span></div></li>
+        <li><code>c<sup>chl</sup></code><div><em>Sable / shaded</em><span>Reduces dark pigment and removes yellow, so extremities are deeper than the body. Sable point, Siamese sable, smoke pearl, and seal all live here.</span></div></li>
+        <li><code>c<sup>h</sup></code><div><em>Himalayan</em><span>Pigment survives only where the body is coolest — nose, ears, feet, tail. Temperature sensitive; points darken in winter. Gives the pointed whites.</span></div></li>
+        <li><code>c</code><div><em>Albino</em><span>No pigment at all. Two copies mask everything else and produce a ruby-eyed white.</span></div></li>
+      </ul>
+      <div class="note" style="margin-top:1.2rem;">
+        <p><strong>My favorite fact on this page.</strong> A ruby-eyed white isn't a colorless bunny — she's a fully colored bunny with the paint switched off. She passes every hidden gene along. Breed two REWs and you can absolutely get a nest box full of color.</p>
+      </div>
+    </div>
+
+    <div class="locus d">
+      <span class="locus-tag">D · locus</span>
+      <h3>Density — how richly the pigment packs</h3>
+      <p class="gene">Melanophilin (MLPH)</p>
+      <p class="domline">D &gt; d</p>
+      <ul class="alleles">
+        <li><code>D</code><div><em>Dense</em><span>Pigment packed normally. Colors read at full strength.</span></div></li>
+        <li><code>d</code><div><em>Dilute</em><span>Needs two copies. Granules scatter, so the same pigment reads softer: black &rarr; blue, chocolate &rarr; lilac, tortoise &rarr; blue tortoise, orange &rarr; cream.</span></div></li>
+      </ul>
+      <p style="font-size:.9rem;color:var(--slate);margin-top:.9rem;line-height:1.6;">Dilute never adds a color — it only softens the one already there, like watering down paint.</p>
+    </div>
+
+    <div class="locus e">
+      <span class="locus-tag">E · locus</span>
+      <h3>Extension — how far the dark travels</h3>
+      <p class="gene">Melanocortin 1 receptor (MC1R)</p>
+      <p class="domline">E<sup>s</sup> &gt; E &gt; e<sup>j</sup> &gt; e</p>
+      <ul class="alleles">
+        <li><code>E<sup>s</sup></code><div><em>Steel</em><span>Pushes dark pigment nearly the full length of the hair, leaving gold or silver tips. Needs agouti + one normal <code class="g">E</code> to look its best. Two copies makes a "super steel" that reads almost self-black.</span></div></li>
+        <li><code>E</code><div><em>Normal extension</em><span>The original setting.</span></div></li>
+        <li><code>e<sup>j</sup></code><div><em>Japanese brindling</em><span>Dark and yellow arrive in patches. Pair with broken and you get tricolor.</span></div></li>
+        <li><code>e</code><div><em>Non-extension</em><span>Needs two copies. Dark barely extends, leaving mostly yellow-red. This one allele produces every tortoise, orange, red, cream, and frosty in the breed.</span></div></li>
+      </ul>
+      <div class="note" style="margin-top:1.2rem;">
+        <p><strong>The tortoise surprise.</strong> A tortoise looks shaded, and the standard files her there. But genetically she's a <em>self</em> bunny (<code class="g">aa</code>) with non-extension (<code class="g">ee</code>) — no sable gene at all. If you remember one thing from this section, make it this one.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="others">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">04</span>
+      <h2>A few more helpful genes</h2>
+      <p class="sub">The five above make the color. These decide the pattern painted on top of it.</p>
+    </div>
+
+    <div class="locus nav">
+      <span class="locus-tag">En · English spotting</span>
+      <h3>Broken</h3>
+      <p class="gene">KIT gene — incompletely dominant</p>
+      <ul class="alleles">
+        <li><code>enen</code><div><em>Solid</em><span>No white pattern.</span></div></li>
+        <li><code>Enen</code><div><em>Broken</em><span>One copy. Color on white — the classic spotted pattern.</span></div></li>
+        <li><code>EnEn</code><div><em>Charlie</em><span>Two copies. Very little color left — usually just a mustache and ear color.</span></div></li>
+      </ul>
+      <p style="margin-top:.95rem;line-height:1.65;max-width:var(--text-max);">Broken &times; broken &rarr; ~25% charlies, 50% brokens, 25% solids. Broken &times; solid &rarr; 50/50, no charlies. Most breeders pair broken to solid for exactly this reason.</p>
+      <div class="note warn" style="margin-top:1.1rem;">
+        <p><strong>A heads-up about charlies.</strong> Research shows <code class="g">EnEn</code> rabbits can develop a dilated cecum and colon (megacolon) and are fragile animals. A charlie isn't just a show problem — please treat her as a rabbit who may need extra care and be upfront with buyers.</p>
+      </div>
+    </div>
+
+    <div class="locus nav">
+      <span class="locus-tag">V · Vienna</span>
+      <h3>Blue-eyed white</h3>
+      <ul class="alleles">
+        <li><code>VV</code><div><em>Non-Vienna</em><span>No effect.</span></div></li>
+        <li><code>Vv</code><div><em>Carrier</em><span>May show a white blaze, odd markings, or blue/marbled eyes — or nothing at all.</span></div></li>
+        <li><code>vv</code><div><em>Blue-eyed white</em><span>Pure white with blue eyes, masking every other color gene.</span></div></li>
+      </ul>
+      <p style="margin-top:.95rem;line-height:1.65;max-width:var(--text-max);">BEW is a recognized variety and they're stunning. Vienna-<em>marked</em> is not, and those markings can surface generations later. Bring this gene in deliberately, with a plan, and disclose it to buyers.</p>
+    </div>
+
+    <div class="locus nav">
+      <span class="locus-tag">L · wool</span>
+      <h3>The fuzzy gene</h3>
+      <p class="gene">FGF5 — recessive &nbsp;(<code class="g">ll</code> = long coat; cannot be shown as a Holland Lop)</p>
+      <p style="line-height:1.65;max-width:var(--text-max);">An early wooled-breed cross improved Holland coat texture but left the wool allele behind. The wool gene and the broken gene sit on the same chromosome approximately 20 centimorgans apart, so they tend to travel together. Line-breed hard for type and expect fuzzies to keep visiting — they make lovely pets.</p>
+    </div>
+  </div>
+</section>
+
+<section id="dwarf">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">05</span>
+      <h2>The dwarf gene &amp; peanuts</h2>
+      <p class="sub">The most consequential gene in the breed — and the one nobody warns new breeders about.</p>
+    </div>
+    <p class="prose">Holland Lops owe their short face, cobby body, and small ears to a 12.1 kb deletion that switches off the HMGA2 gene. How many copies a kit inherits makes all the difference — every Holland is one of three things:</p>
+    <ul class="plain">
+      <li><strong>True dwarf</strong> (<code class="g">Dw/dw</code>) — one of each copy. Short ears, correct proportions. Your show rabbit. A true dwarf can never be "pure" — it always has one of each.</li>
+      <li><strong>False dwarf</strong> (<code class="g">Dw/Dw</code>) — two normal copies. Longer body and ears, usually over the weight limit as an adult. Don't overlook them — often wonderful brood animals with wider hips, more milk, and zero risk of producing peanuts.</li>
+      <li><strong>Peanut</strong> (<code class="g">dw/dw</code>) — two dwarf copies. Tiny, with a pinched hindquarter and large domed head. Peanuts don't grow and don't survive. It's sad every time, and it isn't anything you did wrong — it's simply how this gene works.</li>
+    </ul>
+    <div class="note">
+      <p><strong>A note on notation.</strong> Some breeder sites flip the capitals (<code class="g">Dw</code> vs <code class="g">dw</code>). The letters are just labels — the biology never changes. One dwarf copy gives you a dwarf; two copies are more than a kit can survive. Find which combination a source calls a peanut and translate from there.</p>
+    </div>
+
+    <div class="punnett-tool">
+      <span class="eyebrow" style="margin-bottom:.9rem;">Try it</span>
+      <div class="pchoice" role="group" aria-label="Choose a pairing">
+        <button type="button" data-pair="tt" aria-pressed="true">True &times; true dwarf</button>
+        <button type="button" data-pair="tf" aria-pressed="false">True &times; false dwarf</button>
+        <button type="button" data-pair="ff" aria-pressed="false">False &times; false dwarf</button>
+      </div>
+      <table class="pun" id="pun">
+        <tbody>
+          <tr><th></th><th id="c1">Dw</th><th id="c2">dw</th></tr>
+          <tr><th id="r1">Dw</th><td id="q1"></td><td id="q2"></td></tr>
+          <tr><th id="r2">dw</th><td id="q3"></td><td id="q4"></td></tr>
+        </tbody>
+      </table>
+      <p class="pout" id="pout" aria-live="polite"></p>
+    </div>
+    <p class="prose">Notice the middle pairing: true &times; false gives the exact same 50% true dwarfs as two true dwarfs — with no peanuts at all. Both choices are legitimate. What no pairing can ever do is produce a litter of nothing but true dwarfs.</p>
+    <div class="note">
+      <p><strong>Peanut vs. runt.</strong> A runt is small but normally proportioned and can catch up just fine. A peanut has a noticeably large domed head on a tiny pinched body, and her littermates outgrow her within days. When in doubt, weigh the litter daily — a runt climbs; a peanut doesn't.</p>
+    </div>
+  </div>
+</section>
+
+<section id="ears">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">06</span>
+      <h2>Why lop ears aren't a gene</h2>
+    </div>
+    <p class="prose">There's no single "lop gene." No locus has ever been identified, and ear carriage doesn't follow dominant-or-recessive rules.</p>
+    <p class="prose">Ear carriage is structural. The <strong>crown</strong> — the ridge of cartilage across the skull between the ears — determines whether ears fall or stay up. A wide, deep crown drops them; a narrow one holds them. Crown structure is polygenic (many small-effect genes, no single dominant), with environment layered on top. Warmth and a calm rabbit help ears relax; cold and stress encourage them to rise.</p>
+    <p class="prose">Ear carriage can't be predicted on paper. It's built over generations by consistently selecting for correct crowns. The standard scores the crown at 8 points and the ears at 10 — but the crown is doing most of the work behind both numbers.</p>
+  </div>
+</section>
+
+<script>
+(function () {
+  var data = {
+    tt: { cols: ['Dw', 'dw'], rows: ['Dw', 'dw'],
+      cells: [['Dw/Dw', 'false'], ['Dw/dw', 'true'], ['Dw/dw', 'true'], ['dw/dw', 'peanut']],
+      out: '<strong>50% true dwarf &middot; 25% false dwarf &middot; 25% peanut.</strong> Best odds of show-quality kits — and a quarter of the litter won\'t make it. Both things are true at once.' },
+    tf: { cols: ['Dw', 'Dw'], rows: ['Dw', 'dw'],
+      cells: [['Dw/Dw', 'false'], ['Dw/Dw', 'false'], ['Dw/dw', 'true'], ['Dw/dw', 'true']],
+      out: '<strong>50% true dwarf &middot; 50% false dwarf &middot; no peanuts.</strong> Same share of true dwarfs as pairing two true dwarfs — peanuts replaced by false dwarfs, who are often excellent brood animals.' },
+    ff: { cols: ['Dw', 'Dw'], rows: ['Dw', 'Dw'],
+      cells: [['Dw/Dw', 'false'], ['Dw/Dw', 'false'], ['Dw/Dw', 'false'], ['Dw/Dw', 'false']],
+      out: '<strong>100% false dwarf.</strong> No dwarf allele present, so none can appear. A two-generation plan, but useful for rebuilding a line.' }
+  };
+  var btns = document.querySelectorAll('.pchoice button');
+  var cells = ['q1', 'q2', 'q3', 'q4'].map(function (id) { return document.getElementById(id); });
+  var out   = document.getElementById('pout');
+  function render(key) {
+    var d = data[key];
+    document.getElementById('c1').textContent = d.cols[0];
+    document.getElementById('c2').textContent = d.cols[1];
+    document.getElementById('r1').textContent = d.rows[0];
+    document.getElementById('r2').textContent = d.rows[1];
+    d.cells.forEach(function (c, i) { cells[i].textContent = c[0]; cells[i].className = c[1]; });
+    out.innerHTML = d.out;
+  }
+  btns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      btns.forEach(function (b) { b.setAttribute('aria-pressed', b === btn ? 'true' : 'false'); });
+      render(btn.dataset.pair);
+    });
+  });
+  render('tt');
+}());
+</script>
+<!-- ═══════════════ END OF BOX 1 ═══════════════ -->
+
+<!-- ═══════════════════════════════════════════════════════
+     BOX 2 of 2 — paste this in the SECOND/bottom HTML box,
+     directly below Box 1. Contains: sections 07–10 (Recognized
+     varieties through Sources), footer, FAQ schema, and the
+     reading-progress script that tracks the WHOLE page (both
+     boxes combined) since it measures document scroll height,
+     not just this box.
+════════════════════════════════════════════════════════ -->
+
+<section id="varieties">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">07</span>
+      <h2>Recognized varieties</h2>
+      <p class="sub">Eight color groups &middot; two show classifications: Solid Pattern and Broken Pattern.</p>
+    </div>
+    <p class="prose">Seniors: 6 months and over, max 4 lbs. Juniors: under 6 months, min 2 lbs. Color and markings are worth 4 points out of 100 — but an unrecognized color is a disqualification, so know your groups before show day.</p>
+    <div class="tablewrap">
+      <table class="var">
+        <caption>The underscore (_) means the dominant allele is confirmed; the second copy is unknown or doesn't affect the color.</caption>
+        <thead><tr><th>Variety</th><th>Genotype</th><th>What you see</th></tr></thead>
+        <tbody>
+          <tr class="grouphead"><td colspan="3">Agouti <span>banded hair, light eye circles &amp; belly</span></td></tr>
+          <tr><td>Chestnut</td><td class="geno">A_ B_ C_ D_ E_</td><td>Brown surface, black ticking, orange band over slate undercolor</td></tr>
+          <tr><td>Chocolate agouti</td><td class="geno">A_ bb C_ D_ E_</td><td>Same pattern with chocolate ticking over dove-gray undercolor</td></tr>
+          <tr><td>Opal</td><td class="geno">A_ B_ C_ dd E_</td><td>Blue mingled with fawn</td></tr>
+          <tr><td>Lynx</td><td class="geno">A_ bb C_ dd E_</td><td>Lilac mingled with fawn — truly chocolate-based; most "lynx" Hollands are smutty creams</td></tr>
+          <tr><td>Chinchilla</td><td class="geno">A_ B_ c<sup>chd</sup>_ D_ E_</td><td>Pearl white ticked black; yellow pigment removed</td></tr>
+          <tr><td>Chocolate chinchilla</td><td class="geno">A_ bb c<sup>chd</sup>_ D_ E_</td><td>Pearl white ticked chocolate</td></tr>
+          <tr><td>Squirrel</td><td class="geno">A_ B_ c<sup>chd</sup>_ dd E_</td><td>Blue mingled with white — dilute chinchilla</td></tr>
+
+          <tr class="grouphead"><td colspan="3">Self <span>one color, head to tail</span></td></tr>
+          <tr><td>Black</td><td class="geno">aa B_ C_ D_ E_</td><td>Jet black over dark slate undercolor</td></tr>
+          <tr><td>Blue</td><td class="geno">aa B_ C_ dd E_</td><td>Dark blue over medium blue undercolor</td></tr>
+          <tr><td>Chocolate</td><td class="geno">aa bb C_ D_ E_</td><td>Rich chocolate over dove gray</td></tr>
+          <tr><td>Lilac</td><td class="geno">aa bb C_ dd E_</td><td>Dove gray with a pink cast</td></tr>
+          <tr><td>Blue-eyed white</td><td class="geno">vv</td><td>Pure white, blue eyes; Vienna masks everything else</td></tr>
+          <tr><td>Ruby-eyed white</td><td class="geno">cc</td><td>Pure white, ruby eyes; albino masks everything else</td></tr>
+
+          <tr class="grouphead"><td colspan="3">Shaded <span>color deepens at the extremities</span></td></tr>
+          <tr><td>Tortoise (black)</td><td class="geno">aa B_ C_ D_ ee</td><td>Orange body shading darker on ears, muzzle &amp; haunches</td></tr>
+          <tr><td>Blue tortoise</td><td class="geno">aa B_ C_ dd ee</td><td>Fawn body with blue shading</td></tr>
+          <tr><td>Chocolate tortoise</td><td class="geno">aa bb C_ D_ ee</td><td>Golden body with chocolate shading</td></tr>
+          <tr><td>Lilac tortoise</td><td class="geno">aa bb C_ dd ee</td><td>Fawn body with lilac shading</td></tr>
+          <tr><td>Sable point</td><td class="geno">aa B_ c<sup>chl</sup>_ D_ ee</td><td>Cream body, sepia nose/ears/feet/tail</td></tr>
+          <tr><td>Siamese sable</td><td class="geno">aa B_ c<sup>chl</sup>_ D_ E_</td><td>Sepia saddle fading to lighter sides and belly</td></tr>
+          <tr><td>Smoke pearl</td><td class="geno">aa B_ c<sup>chl</sup>_ dd E_</td><td>Smoke gray fading to pearl — dilute sable</td></tr>
+          <tr><td>Seal</td><td class="geno">aa B_ c<sup>chl</sup>c<sup>chl</sup> D_ E_</td><td>Near-black sepia; two sable copies = minimal shading</td></tr>
+
+          <tr class="grouphead"><td colspan="3">Tan pattern <span>self body, tan trim underneath</span></td></tr>
+          <tr><td>Otter (black, blue, chocolate, lilac)</td><td class="geno">a<sup>t</sup>_ B_ C_ D_ E_</td><td>Self body with orange/fawn trim and creamy white belly</td></tr>
+
+          <tr class="grouphead"><td colspan="3">Wide band <span>agouti + non-extension</span></td></tr>
+          <tr><td>Orange</td><td class="geno">A_ B_ C_ D_ ee</td><td>Bright orange over white belly and off-white undercolor</td></tr>
+          <tr><td>Cream</td><td class="geno">A_ B_ C_ dd ee</td><td>Dilute orange</td></tr>
+          <tr><td>Red</td><td class="geno">A_ B_ C_ D_ ee ww</td><td>Deep reddish sorrel; true wide-band gene + high rufus modifiers</td></tr>
+          <tr><td>Frosty</td><td class="geno">A_ B_ c<sup>chd</sup>_ D_ ee</td><td>Light pearl — chinchilla on a non-extension agouti</td></tr>
+
+          <tr class="grouphead"><td colspan="3">Ticked <span>steel</span></td></tr>
+          <tr><td>Steel (gold-tipped)</td><td class="geno">A_ B_ C_ D_ E<sup>s</sup>E</td><td>Dark body with gold tipping. Silver tipping = add <code class="g">c<sup>chd</sup>_</code>. Recognized in black, blue, chocolate &amp; lilac in gold or silver</td></tr>
+
+          <tr class="grouphead"><td colspan="3">Pointed white <span>himalayan pattern</span></td></tr>
+          <tr><td>Pointed white (black, blue, chocolate, lilac)</td><td class="geno">aa B_ c<sup>h</sup>_ D_ E_</td><td>White body, colored nose/ears/feet/tail, ruby eyes</td></tr>
+
+          <tr class="grouphead"><td colspan="3">Broken <span>any recognized color on white</span></td></tr>
+          <tr><td>Broken</td><td class="geno">any variety + Enen</td><td>Spotted or patched; balanced nose mark, eye color, and ear color</td></tr>
+          <tr><td>Tricolor</td><td class="geno">A_ B_ C_ D_ e<sup>j</sup>_ Enen</td><td>White with two evenly spread colors: black &amp; orange, blue &amp; fawn, chocolate &amp; orange, or lilac &amp; fawn</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note" style="margin-top:1.6rem;">
+      <p><strong>Not recognized in Holland Lops:</strong> silver marten, sable marten, fox (torted otter), harlequin, magpie, sallander, self-chin, sable agouti, tan, and Vienna-marked. All are healthy, many are beautiful — they just can't show. Tell buyers plainly. CODs are active for fox and silver marten, so this list can change; always verify with the current ARBA Standard and HLRSC.</p>
+      <p style="margin-top:.75rem;">"Fawn" is not a Holland Lop variety name. The dilute of orange is <em>cream</em>. Fawn appears only inside the tricolor descriptions.</p>
+    </div>
+  </div>
+</section>
+
+<section id="pairings">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">08</span>
+      <h2>Pairings to think twice about</h2>
+      <p class="sub">Each produces healthy bunnies — just in colors that can't be shown. A little planning here saves a lot of surprises at eight weeks.</p>
+    </div>
+    <div class="tablewrap">
+      <table class="var">
+        <thead><tr><th>Pairing</th><th>What can turn up</th></tr></thead>
+        <tbody>
+          <tr><td>Self &times; chinchilla</td><td>Self-chin — muddy, off-color black or blue</td></tr>
+          <tr><td>Sable &times; agouti</td><td>Sable agouti</td></tr>
+          <tr><td>Sable &times; otter</td><td>Sable marten</td></tr>
+          <tr><td>Chinchilla &times; otter</td><td>Silver marten</td></tr>
+          <tr><td>Otter &times; non-extension (tort, orange, cream)</td><td>Fox (torted otter)</td></tr>
+          <tr><td>Blue tort &times; sable point</td><td>Blue point</td></tr>
+          <tr><td>Chocolate or lilac &times; any shaded</td><td>Chocolate-based shadeds — not recognized</td></tr>
+          <tr><td>Steel &times; self</td><td>Self-steel reads as a poor black; steel then hides in your herd</td></tr>
+          <tr><td>Pointed white &times; broken</td><td>Loss of boot color — a disqualification</td></tr>
+          <tr><td>Broken &times; broken</td><td>~25% charlies</td></tr>
+          <tr><td>True dwarf &times; true dwarf</td><td>~25% peanuts</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">09</span>
+      <h2>Frequently asked questions</h2>
+      <p class="sub">The genetics questions we hear most, answered straight — and yes, most of these bust a common myth.</p>
+    </div>
+    <div class="faq">
+      <details class="faq-item" open>
+        <summary>Do two true dwarfs always make a litter of true dwarfs?</summary>
+        <p class="a">No pairing can produce all true dwarfs. A true dwarf always carries one dwarf copy and one normal copy, so 50% true dwarf is the absolute ceiling — the rest split between false dwarfs and, with two true dwarf parents, non-viable peanuts.</p>
+      </details>
+      <details class="faq-item">
+        <summary>If a ruby-eyed white's parent was a sable point, does she carry sable?</summary>
+        <p class="a">She can't. Albino and sable sit at the same locus (C), and a ruby-eyed white's two albino copies already fill both slots — there's no room left to carry sable there, even though she can still carry plenty at the other four color addresses.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Is tortoise a shaded color?</summary>
+        <p class="a">It's filed in the shaded group on the show table, but genetically a tortoise is a self rabbit (<code class="g">aa</code>) with non-extension (<code class="g">ee</code>) — no sable gene involved at all. It's one of the most common mix-ups in Holland color genetics.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Will pairing two broken rabbits give me all broken kits?</summary>
+        <p class="a">No — broken &times; broken produces roughly 25% charlies, 50% brokens, and 25% solids. Pairing broken to solid instead gives a safer 50/50 split with zero risk of charlies.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Are peanuts just runts that need extra feeding?</summary>
+        <p class="a">No. Peanuts carry two copies of the dwarf gene, which isn't survivable no matter how much care they receive. A runt is a different animal entirely — smaller but normally proportioned, and able to catch up with time.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Is there a single gene responsible for lop ears?</summary>
+        <p class="a">No identified locus controls ear carriage. It's a structural trait driven by the crown — the ridge of cartilage between the ears — which is polygenic (many small-effect genes) and shaped further by environment. It's selected for over generations, not calculated from a pairing.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Are false dwarfs worth keeping in a breeding program?</summary>
+        <p class="a">Yes. Paired with a true dwarf, a false dwarf produces the same 50% true dwarf odds as pairing two true dwarfs together — but with zero peanuts. False dwarfs are also often excellent brood animals, with wider hips and more milk.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Does color decide who wins on the show table?</summary>
+        <p class="a">Not much. Color and markings are worth only 4 points out of 100 on the ARBA scorecard; type accounts for 84. Correct type has to come first — color is the finishing touch layered on afterward.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="sources" id="sources">
+  <div class="wrap">
+    <span class="eyebrow">10</span>
+    <h2>Sources</h2>
+    <p class="sub">Breed standard details checked against the HLRSC and published standard text. Genetics checked against peer-reviewed research and university extension material.</p>
+    <ol>
+      <li>Carneiro M, et al. <em>Dwarfism and Altered Craniofacial Development in Rabbits Is Caused by a 12.1 kb Deletion at the HMGA2 Locus.</em> Genetics 205(2), 2017. <a href="https://academic.oup.com/genetics/article/205/2/955/6066452" target="_blank" rel="noopener">Link</a> — dwarf allele, notation, homozygous lethality.</li>
+      <li>Online Mendelian Inheritance in Animals. <em>OMIA:000299-9986, Dwarfism in Oryctolagus cuniculus.</em> <a href="https://www.omia.org/OMIA000299/9986/" target="_blank" rel="noopener">Link</a> — autosomal incompletely dominant classification.</li>
+      <li>Fontanesi L, et al. <em>The KIT Gene Is Associated with the English Spotting Coat Color Locus and Congenital Megacolon in Checkered Giant Rabbits.</em> PLoS ONE, 2014. <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3988019/" target="_blank" rel="noopener">Link</a> — En incomplete dominance, charlie megacolon, KIT/FGF5 linkage.</li>
+      <li>Fontanesi L, et al. <em>A composite six bp in-frame deletion in the MC1R gene is associated with Japanese brindling coat colour in rabbits.</em> BMC Genetics, 2010. <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3236303/" target="_blank" rel="noopener">Link</a> — extension series dominance order.</li>
+      <li>Oregon State University Extension. <em>Understanding the genetics behind rabbit coat colors, Part 2.</em> <a href="https://extension.oregonstate.edu/catalog/understanding-genetics-behind-rabbit-coat-colors-part-2-coat-color-genes" target="_blank" rel="noopener">Link</a> — A, B, C, D, E series and molecular identities.</li>
+      <li>Boswell K. <em>Holland Color Genetics.</em> HLRSC Guidebook, 7th ed., 2018. <a href="https://www.hlrsc.org/articles1/holland-color-genetics" target="_blank" rel="noopener">Link</a> — Holland genotypes, pairing cautions, Vienna and wool genes.</li>
+      <li>ARBA <em>Standard of Perfection</em> — Holland Lop breed standard, groups, classes, faults, disqualifications, recognized varieties. <a href="https://arba.net/product/standard-of-perfection/" target="_blank" rel="noopener">Link</a></li>
+      <li>Lots of Lops Rabbitry. <em>Color Genotypes of All Recognized Holland Lop Varieties.</em> <a href="http://www.lotsoflops.com/8203color-genotypes-of-all-recognized-holland-lop-varieties.html" target="_blank" rel="noopener">Link</a> — variety genotype cross-check.</li>The information provided on this website is intended for general educational and informational purposes only. CJM Legacy Rabbitry is not a veterinary practice, and the information presented here does not constitute veterinary advice, diagnosis, treatment, or a substitute for examination, diagnosis, or care by a qualified veterinarian.
+<br><br>
+Rabbit health, genetics, nutrition, breeding, husbandry, and behavior can involve individual circumstances, variations, and exceptions. Information presented on this website should not be used to diagnose, treat, or make medical decisions regarding an individual rabbit. For concerns about a rabbit's health or medical care, consult a qualified rabbit-savvy veterinarian.
+<br><br>
+CJM Legacy Rabbitry makes reasonable efforts to present accurate, useful, and current information. However, veterinary recommendations, scientific knowledge, and available research may change over time, and no representation or guarantee is made that all information is complete, current, or applicable to every individual rabbit or situation.
+<br><br>
+Information regarding genetics, inheritance, breeding, coloration, health, or expected outcomes is provided for educational purposes and should not be interpreted as a guarantee of any particular breeding, genetic, health, temperament, or developmental outcome.<br><br>
+    </ol>
+    <div class="note">
+      <p><strong>Verify before you rely on it.</strong> The ARBA Standard of Perfection is republished every five years; varieties are added between editions. Check the current Standard and HLRSC before making any breeding or show decision based on this page.</p>
+    </div>
+  </div>
+</section>
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Do two true dwarfs always make a litter of true dwarfs?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No pairing can produce all true dwarfs. A true dwarf always carries one dwarf copy and one normal copy, so 50% true dwarf is the absolute ceiling — the rest split between false dwarfs and, with two true dwarf parents, non-viable peanuts."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "If a ruby-eyed white's parent was a sable point, does she carry sable?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "She can't. Albino and sable sit at the same locus (C), and a ruby-eyed white's two albino copies already fill both slots — there's no room left to carry sable there, even though she can still carry plenty at the other four color addresses."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is tortoise a shaded color?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It's filed in the shaded group on the show table, but genetically a tortoise is a self rabbit (aa) with non-extension (ee) — no sable gene involved at all. It's one of the most common mix-ups in Holland color genetics."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will pairing two broken rabbits give me all broken kits?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No — broken times broken produces roughly 25% charlies, 50% brokens, and 25% solids. Pairing broken to solid instead gives a safer 50/50 split with zero risk of charlies."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are peanuts just runts that need extra feeding?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Peanuts carry two copies of the dwarf gene, which isn't survivable no matter how much care they receive. A runt is a different animal entirely — smaller but normally proportioned, and able to catch up with time."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is there a single gene responsible for lop ears?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No identified locus controls ear carriage. It's a structural trait driven by the crown, the ridge of cartilage between the ears, which is polygenic and shaped further by environment. It's selected for over generations, not calculated from a pairing."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are false dwarfs worth keeping in a breeding program?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Paired with a true dwarf, a false dwarf produces the same 50% true dwarf odds as pairing two true dwarfs together, but with zero peanuts. False dwarfs are also often excellent brood animals, with wider hips and more milk."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does color decide who wins on the show table?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not much. Color and markings are worth only 4 points out of 100 on the ARBA scorecard; type accounts for 84. Correct type has to come first, with color as the finishing touch layered on afterward."
+      }
+    }
+  ]
+}
+</script>
+
+<script>
+(function(){
+  var bar = document.getElementById('progress-bar');
+  var pct = document.getElementById('progress-pct');
+  if (!bar || !pct) return; /* safety check in case Box 1 hasn't loaded */
+  var hideTimer;
+  window.addEventListener('scroll', function(){
+    var h = document.documentElement;
+    var scrolled = h.scrollTop;
+    var height = h.scrollHeight - h.clientHeight; /* full page height — both boxes */
+    var ratio = height > 0 ? Math.min(100, Math.max(0, (scrolled / height) * 100)) : 0;
+    bar.style.width = ratio + '%';
+    pct.textContent = Math.round(ratio) + '%';
+    pct.classList.add('show');
+    clearTimeout(hideTimer);
+    hideTimer = setTimeout(function(){ pct.classList.remove('show'); }, 900);
+  }, { passive: true });
+}());
+</script>
+<!-- ═══════════════ END OF BOX 2 ═══════════════ -->
+<!-- ============ END PAGE CONTENT ============ -->
+<div data-peer-review></div>
+
+<div id="site-footer"></div>
+<script src="js/layout.js"></script>
+</body>
+</html>

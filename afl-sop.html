@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The American Fuzzy Lop Standard of Perfection — A Beginner&#x27;s Guide | CJM Legacy Rabbitry</title>
+<meta name="description" content="A plain-language guide to the ARBA American Fuzzy Lop Standard of Perfection — how judges score type, wool, and color — from CJM Legacy Rabbitry.">
+<link rel="canonical" href="https://cjmrabbitry.com/afl-sop">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="CJM Legacy Rabbitry">
+<meta property="og:title" content="The American Fuzzy Lop Standard of Perfection — A Beginner&#x27;s Guide | CJM Legacy Rabbitry">
+<meta property="og:description" content="A plain-language guide to the ARBA American Fuzzy Lop Standard of Perfection — how judges score type, wool, and color — from CJM Legacy Rabbitry.">
+<meta property="og:url" content="https://cjmrabbitry.com/afl-sop">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Jost:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/site.css">
+
+</head>
+<body>
+
+<div id="site-header"></div>
+
+<!-- ============ PAGE CONTENT (from Webflow embed) ============ -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --navy: #101d38;
+    --navy-deep: #0a1428;
+    --gold: #b6913c;
+    --gold-light: #d9c185;
+    --cream: #f6f1e4;
+    --ivory: #fbf8ef;
+    --marsh: #3f5b4d;
+    --ink: #1c2333;
+    --ink-soft: #4a5266;
+    --line: rgba(16,29,56,0.14);
+    --max: 920px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--ivory);
+    color:var(--ink);
+    font-family:'Jost', sans-serif;
+    font-weight:400;
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  h1,h2,h3,h4{
+    font-family:'Cormorant Garamond', serif;
+    color:var(--navy);
+    font-weight:600;
+    margin:0;
+    letter-spacing:0.01em;
+  }
+
+  a{color:var(--gold); text-decoration:none;}
+  a:hover, a:focus-visible{text-decoration:underline;}
+  a:focus-visible, button:focus-visible{outline:2px solid var(--gold); outline-offset:3px;}
+
+  .wrap{max-width:var(--max); margin:0 auto; padding:0 28px;}
+
+  .eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    font-family:'Jost', sans-serif;
+    font-size:12.5px;
+    letter-spacing:0.22em;
+    text-transform:uppercase;
+    color:var(--gold);
+    font-weight:500;
+  }
+  .eyebrow::before{
+    content:"";
+    width:22px;
+    height:1px;
+    background:var(--gold);
+    display:inline-block;
+  }
+
+  /* ---------- Header / Hero ---------- */
+  header.hero{
+    background:
+      radial-gradient(ellipse at 50% -10%, rgba(182,145,60,0.18), transparent 55%),
+      linear-gradient(180deg, var(--navy) 0%, var(--navy-deep) 100%);
+    color:var(--cream);
+    padding:88px 0 76px;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+  }
+  header.hero::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background-image:
+      repeating-linear-gradient(90deg, rgba(246,241,228,0.035) 0px, rgba(246,241,228,0.035) 1px, transparent 1px, transparent 64px);
+    pointer-events:none;
+  }
+  .crest-mark{
+    width:78px;
+    height:78px;
+    margin:0 auto 28px;
+    border:1px solid var(--gold);
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .crest-mark svg{width:38px; height:38px;}
+
+  header.hero .eyebrow{color:var(--gold-light);}
+  header.hero .eyebrow::before{background:var(--gold-light);}
+
+  h1.hero-title{
+    color:var(--ivory);
+    font-size:clamp(38px, 6vw, 64px);
+    line-height:1.06;
+    margin:22px auto 20px;
+    max-width:780px;
+    font-weight:700;
+  }
+  h1.hero-title em{
+    font-style:italic;
+    color:var(--gold-light);
+  }
+
+  .hero-sub{
+    max-width:560px;
+    margin:0 auto;
+    color:rgba(246,241,228,0.78);
+    font-size:17px;
+    line-height:1.75;
+  }
+
+  .hero-meta{
+    margin-top:38px;
+    display:flex;
+    justify-content:center;
+    gap:36px;
+    flex-wrap:wrap;
+  }
+  .hero-meta div{text-align:center;}
+  .hero-meta .num{
+    display:block;
+    font-family:'Cormorant Garamond', serif;
+    font-size:30px;
+    color:var(--gold-light);
+    font-weight:700;
+  }
+  .hero-meta .label{
+    font-size:11px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:rgba(246,241,228,0.6);
+  }
+
+  /* ---------- Sections ---------- */
+  main{padding:0 0 40px;}
+
+  section{
+    padding:74px 0;
+    border-bottom:1px solid var(--line);
+  }
+  section:last-of-type{border-bottom:none;}
+
+  .section-head{
+    max-width:640px;
+    margin:0 0 34px;
+  }
+  .section-head .eyebrow{margin-bottom:14px;}
+  .section-head h2{
+    font-size:clamp(28px, 4vw, 38px);
+    line-height:1.15;
+  }
+  .section-head p.lede{
+    margin-top:16px;
+    color:var(--ink-soft);
+    font-size:16.5px;
+    max-width:600px;
+  }
+
+  section.tint{background:var(--cream);}
+
+  p{margin:0 0 16px; color:var(--ink-soft); font-size:16px;}
+  p:last-child{margin-bottom:0;}
+  strong{color:var(--navy); font-weight:600;}
+
+  /* ---------- Intro / origin two-col ---------- */
+  .origin-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:48px;
+    align-items:start;
+  }
+  .origin-grid .stat-card{
+    background:var(--navy);
+    color:var(--cream);
+    border-radius:2px;
+    padding:30px 28px;
+  }
+  .stat-card .eyebrow{color:var(--gold-light); margin-bottom:12px;}
+  .stat-card .eyebrow::before{background:var(--gold-light);}
+  .stat-card p{color:rgba(246,241,228,0.8);}
+  .stat-card .figure{
+    font-family:'Cormorant Garamond', serif;
+    font-size:46px;
+    color:var(--gold-light);
+    font-weight:700;
+    line-height:1;
+    margin-bottom:10px;
+  }
+
+  /* ---------- Point schedule ---------- */
+  .score-table{
+    width:100%;
+    border-collapse:collapse;
+    font-family:'Jost', sans-serif;
+    background:var(--ivory);
+    border:1px solid var(--line);
+  }
+  .score-table caption{
+    text-align:left;
+    font-size:11px;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    padding-bottom:10px;
+  }
+  .score-table th, .score-table td{
+    padding:14px 18px;
+    text-align:left;
+    border-bottom:1px solid var(--line);
+    font-size:15px;
+  }
+  .score-table thead th{
+    background:var(--navy);
+    color:var(--cream);
+    font-size:11.5px;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    font-weight:500;
+  }
+  .score-table td.pts, .score-table th.pts{
+    text-align:right;
+    font-variant-numeric:tabular-nums;
+    width:90px;
+  }
+  .score-table tr.major td{
+    font-weight:600;
+    color:var(--navy);
+    background:rgba(182,145,60,0.08);
+  }
+  .score-table tr.sub td{
+    color:var(--ink-soft);
+    font-size:14.5px;
+    padding-left:34px;
+  }
+  .score-table tr.total td{
+    font-weight:700;
+    color:var(--navy);
+    border-top:2px solid var(--gold);
+    border-bottom:none;
+    background:rgba(182,145,60,0.12);
+  }
+
+  .callout{
+    margin-top:28px;
+    border-left:3px solid var(--gold);
+    padding:6px 0 6px 22px;
+  }
+  .callout p{color:var(--navy); font-style:italic; font-size:16.5px;}
+
+  /* ---------- Weight cards ---------- */
+  .weight-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:24px;
+  }
+  .weight-card{
+    border:1px solid var(--line);
+    background:var(--ivory);
+    padding:28px 26px;
+    position:relative;
+  }
+  .weight-card::before{
+    content:"";
+    position:absolute;
+    top:0; left:0;
+    width:100%;
+    height:3px;
+    background:var(--gold);
+  }
+  .weight-card h3{font-size:21px; margin-bottom:6px;}
+  .weight-card .range{
+    font-family:'Cormorant Garamond', serif;
+    font-size:34px;
+    color:var(--marsh);
+    font-weight:700;
+    margin:10px 0 8px;
+  }
+  .weight-card p{font-size:14.5px; margin-bottom:0;}
+
+  /* ---------- Feature rows ---------- */
+  .feature-row{
+    display:grid;
+    grid-template-columns:120px 1fr;
+    gap:32px;
+    padding:32px 0;
+    border-top:1px solid var(--line);
+  }
+  .feature-row:first-of-type{border-top:none;}
+  .feature-points{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+  }
+  .feature-points .n{
+    font-family:'Cormorant Garamond', serif;
+    font-size:52px;
+    font-weight:700;
+    color:var(--gold);
+    line-height:1;
+  }
+  .feature-points .u{
+    font-size:11px;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    margin-top:4px;
+  }
+  .feature-body h3{font-size:24px; margin-bottom:10px;}
+  .feature-body ul{
+    margin:14px 0 0;
+    padding:0 0 0 18px;
+    color:var(--ink-soft);
+  }
+  .feature-body li{margin-bottom:8px; font-size:15.5px;}
+  .fault-line{
+    margin-top:16px;
+    font-size:14px;
+    color:var(--ink-soft);
+  }
+  .fault-line strong{
+    color:var(--marsh);
+    font-size:11px;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    display:block;
+    margin-bottom:5px;
+  }
+
+  /* ---------- Wool sub-score bars ---------- */
+  .wool-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:20px;
+    margin-top:8px;
+  }
+  .wool-card{
+    border:1px solid var(--line);
+    background:var(--ivory);
+    padding:22px 20px;
+  }
+  .wool-card .pts{
+    font-family:'Cormorant Garamond', serif;
+    font-size:38px;
+    color:var(--gold);
+    font-weight:700;
+    line-height:1;
+    margin-bottom:6px;
+  }
+  .wool-card h4{font-size:17px; margin-bottom:8px;}
+  .wool-card p{font-size:13.5px; margin-bottom:0;}
+
+  /* ---------- Color groups ---------- */
+  .color-grid{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+  }
+  .color-cell{
+    background:var(--ivory);
+    padding:24px 26px;
+  }
+  .color-cell h4{
+    font-size:19px;
+    color:var(--navy);
+    margin-bottom:8px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .color-cell h4 .dot{
+    width:9px; height:9px;
+    border-radius:50%;
+    background:var(--gold);
+    display:inline-block;
+    flex:none;
+  }
+  .color-cell p{font-size:14.5px; margin-bottom:6px;}
+  .color-cell .examples{
+    font-size:12.5px;
+    color:var(--marsh);
+    letter-spacing:0.02em;
+  }
+
+  .pattern-note{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:24px;
+    margin-bottom:36px;
+  }
+  .pattern-note .card{
+    background:var(--navy);
+    color:var(--cream);
+    padding:26px 26px;
+  }
+  .pattern-note .card h4{color:var(--gold-light); font-size:20px; margin-bottom:8px;}
+  .pattern-note .card p{color:rgba(246,241,228,0.78); font-size:14.5px; margin-bottom:0;}
+
+  /* ---------- Fuzzy vs Holland callout ---------- */
+  .compare-box{
+    border:1px solid var(--line);
+    background:var(--ivory);
+    padding:28px 26px;
+  }
+  .compare-box h3{font-size:21px; margin-bottom:12px;}
+
+  /* ---------- Philosophy / brand statement ---------- */
+  .statement{
+    text-align:center;
+    padding:88px 0;
+    background:linear-gradient(180deg, var(--navy) 0%, var(--navy-deep) 100%);
+    color:var(--ivory);
+  }
+  .statement .wrap{max-width:700px;}
+  .statement blockquote{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-size:clamp(24px, 3.4vw, 32px);
+    line-height:1.5;
+    color:var(--ivory);
+    margin:0 0 24px;
+  }
+  .statement cite{
+    font-style:normal;
+    font-size:12px;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+    color:var(--gold-light);
+  }
+
+  /* ---------- Sources / footer ---------- */
+  footer{
+    background:var(--cream);
+    padding:56px 0 44px;
+  }
+  footer h3{font-size:15px; letter-spacing:0.1em; text-transform:uppercase; color:var(--navy); margin-bottom:18px; font-family:'Jost', sans-serif; font-weight:600;}
+  footer ol{
+    margin:0;
+    padding:0 0 0 20px;
+    color:var(--ink-soft);
+    font-size:14px;
+  }
+  footer li{margin-bottom:8px;}
+  footer .note{
+    margin-top:26px;
+    font-size:13px;
+    color:var(--ink-soft);
+    font-style:italic;
+    border-top:1px solid var(--line);
+    padding-top:20px;
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:760px){
+    .origin-grid, .weight-grid, .color-grid, .pattern-note, .wool-grid{grid-template-columns:1fr;}
+    .feature-row{grid-template-columns:1fr; gap:10px;}
+    .feature-points{flex-direction:row; align-items:baseline; gap:8px;}
+    header.hero{padding:64px 0 52px;}
+    section{padding:52px 0;}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+  }
+
+  /* ---------- Top nav (back to hub) ---------- */
+  nav.subnav{
+    background:var(--navy-deep);
+    border-bottom:1px solid rgba(217,193,133,0.18);
+  }
+  nav.subnav .wrap{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:16px 28px;
+  }
+  nav.subnav .brand{
+    font-family:'Cormorant Garamond', serif;
+    font-size:16px;
+    font-weight:600;
+    color:var(--cream);
+    letter-spacing:0.02em;
+  }
+  nav.subnav .brand:hover{text-decoration:none; color:var(--gold-light);}
+  nav.subnav .back-link{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    font-size:11.5px;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--gold-light);
+    font-weight:500;
+  }
+  nav.subnav .back-link svg{width:13px; height:13px;}
+  nav.subnav .back-link:hover{text-decoration:none; opacity:0.8;}
+
+  @media (max-width:640px){
+    nav.subnav .brand{font-size:14px;}
+    nav.subnav .back-link span{display:none;}
+  }
+</style>
+<nav class="subnav">
+  <div class="wrap">
+    <a href="index.html" class="brand"></a>
+    <a href="sop-guide" class="back-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+      <span>All Breed Guides</span>
+    </a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <h1 class="hero-title">The American Fuzzy Lop <em>Standard of Perfection</em></h1>
+    <p class="hero-sub">A plain-language guide to how ARBA judges evaluate an American Fuzzy Lop — a body-type breed that happens to wear wool — for anyone new to the breed.</p>
+    <div class="hero-meta">
+      <div><span class="num">100</span><span class="label">Points Possible</span></div>
+      <div><span class="num">75</span><span class="label">Points On Type Alone</span></div>
+      <div><span class="num">4 lb</span><span class="label">Max Adult Weight</span></div>
+      <div><span class="num">1989</span><span class="label">ARBA Recognition</span></div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- WHAT IS THE SOP + ORIGIN -->
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Where To Start</span>
+        <h2>What is the "Standard of Perfection?"</h2>
+        <p class="lede">The rulebook every American Fuzzy Lop is measured against — and the reason you'll see terms like "type" and "wool" on this site.</p>
+      </div>
+
+      <div class="origin-grid">
+        <div>
+          <p>The <strong>Standard of Perfection (SOP)</strong> is the official guidebook published by the <strong>American Rabbit Breeders Association (ARBA)</strong> describing the "ideal" version of every recognized rabbit breed. Each breed's section is written by that breed's national specialty club — for the American Fuzzy Lop, the American Fuzzy Lop Rabbit Club (AFLRC) — and adopted by ARBA.</p>
+          <p>At an ARBA-sanctioned show, a licensed judge compares each rabbit to this written standard — not to the other rabbits in the room — and scores it out of 100 points. Breeders use the same standard as a roadmap for choosing breeding stock, which is why the language of the SOP shows up throughout our site.</p>
+          <p>This page is a plain-language summary for education, not a reproduction of the official text. The complete standard is published in ARBA's <em>Standard of Perfection</em> book, available at <a href="https://arba.net" target="_blank" rel="noopener">arba.net</a>.</p>
+        </div>
+        <div class="stat-card">
+          <span class="eyebrow">Breed Origin</span>
+          <div class="figure">1980s</div>
+          <p>Born inside the Holland Lop breed itself: early Hollands carried a hidden "wool gene," and pairing two carriers occasionally produced woolly-coated kits, once considered a fault. Breeder Patty Greene-Karl spent years developing these "fuzzy Hollands" into a breed of their own. After passing at the 1988 ARBA Convention in Madison, Wisconsin, the American Fuzzy Lop's recognition took effect in 1989 — the same year Helen McKie's "Herbie" became its first ARBA Best of Breed.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- POINT SCHEDULE -->
+  <section class="tint">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">How Judges Score</span>
+        <h2>The 100-point schedule</h2>
+        <p class="lede">This is a body-type breed first and a wool breed second: 75 of 100 points go to head, body, ears, and feet/legs combined — the wool coat itself is worth just 15.</p>
+      </div>
+
+      <table class="score-table">
+        <caption>ARBA American Fuzzy Lop scale of points</caption>
+        <thead>
+          <tr><th>Category</th><th class="pts">Points</th></tr>
+        </thead>
+        <tbody>
+          <tr class="major"><td>General Type</td><td class="pts">75</td></tr>
+          <tr class="sub"><td>&nbsp;&nbsp;Head</td><td class="pts">30</td></tr>
+          <tr class="sub"><td>&nbsp;&nbsp;Body</td><td class="pts">30</td></tr>
+          <tr class="sub"><td>&nbsp;&nbsp;Ears</td><td class="pts">10</td></tr>
+          <tr class="sub"><td>&nbsp;&nbsp;Feet &amp; Legs</td><td class="pts">5</td></tr>
+          <tr class="major"><td>Fur (Wool)</td><td class="pts">15</td></tr>
+          <tr class="sub"><td>&nbsp;&nbsp;Density</td><td class="pts">8</td></tr>
+          <tr class="sub"><td>&nbsp;&nbsp;Texture</td><td class="pts">5</td></tr>
+          <tr class="sub"><td>&nbsp;&nbsp;Length</td><td class="pts">2</td></tr>
+          <tr><td>Color &amp; Markings</td><td class="pts">5</td></tr>
+          <tr><td>Condition</td><td class="pts">5</td></tr>
+          <tr class="total"><td>Total</td><td class="pts">100</td></tr>
+        </tbody>
+      </table>
+
+      <div class="callout">
+        <p>A correctly built Fuzzy with a so-so coat will always outscore a gorgeously wooled rabbit with poor type.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WEIGHT & CLASSES -->
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Show Classes</span>
+        <h2>Weight &amp; age divisions</h2>
+        <p class="lede">A small, compact breed closely related in size to the Holland Lop.</p>
+      </div>
+
+      <div class="weight-grid">
+        <div class="weight-card">
+          <h3>Senior Bucks &amp; Does</h3>
+          <div class="range">Up to 4 lb</div>
+          <p>6 months of age or older.</p>
+        </div>
+        <div class="weight-card">
+          <h3>Junior Bucks &amp; Does</h3>
+          <div class="range">Up to 3¾ lb</div>
+          <p>Under 6 months of age. Juniors cannot be shown in the senior class until they reach 6 months, and no rabbit may be shown in a younger age class than its true age.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HEAD & BODY -->
+  <section class="tint">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">General Type — Head &amp; Body</span>
+        <h2>A round ball, slightly flattened on the bottom</h2>
+        <p class="lede">Head and body together carry 60 of the 75 type points — the largest share of the entire standard.</p>
+      </div>
+
+      <div class="feature-row">
+        <div class="feature-points"><span class="n">30</span><span class="u">Head</span></div>
+        <div class="feature-body">
+          <h3>Head</h3>
+          <p>Set at medium height, close to the shoulders, with almost no visible neck. Judges look for excellent width from the top of the head down to the muzzle, giving an even, almost square "block" appearance, and a flat-looking face rather than a long, pointed one — a flatter face is read as a sign of the strong bone the standard wants to see.</p>
+          <div class="fault-line"><strong>Faulted for</strong>A head too large or too small to balance with the body.</div>
+        </div>
+      </div>
+
+      <div class="feature-row">
+        <div class="feature-points"><span class="n">30</span><span class="u">Body</span></div>
+        <div class="feature-body">
+          <h3>Body</h3>
+          <p>Short, compact, and "cobby" — width, depth, and length measurements are all close to equal, giving the impression of a round ball slightly flattened on the bottom.</p>
+          <ul>
+            <li>Width equal to height at the shoulders, loin, and hips</li>
+            <li>Well-developed, well-filled shoulders and hindquarters</li>
+            <li>Heavily muscled and smooth — the spine and hip bones shouldn't be prominent or catch under a judge's hand sliding from shoulders to hips</li>
+            <li>Short, thick, straight legs with strong bone</li>
+          </ul>
+          <div class="fault-line"><strong>Faulted for</strong>A body that's long or narrow rather than short and compact; feet that turn outward, a sign of pinched hindquarters.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EARS & FEET/LEGS -->
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">General Type — Ears, Feet &amp; Legs</span>
+        <h2>Short ears, straight legs</h2>
+      </div>
+
+      <div class="feature-row">
+        <div class="feature-points"><span class="n">10</span><span class="u">Ears</span></div>
+        <div class="feature-body">
+          <h3>Ears</h3>
+          <ul>
+            <li>Short, thick, and wide, hanging straight down close to the cheeks</li>
+            <li>Fall from a well-defined crown — a crease running vertically down the middle of an ear signals the crown is pinching and needs more width</li>
+            <li>Extend roughly ½ to 1 inch below the jaw line, balanced with the size of the body</li>
+            <li>Covered in regular fur, not the long wool coat found on the rest of the body</li>
+          </ul>
+          <div class="fault-line"><strong>Faulted for</strong>Ears that lift or flare out to the sides ("airplane ears") instead of hanging down at all times.</div>
+        </div>
+      </div>
+
+      <div class="feature-row">
+        <div class="feature-points"><span class="n">5</span><span class="u">Feet &amp; Legs</span></div>
+        <div class="feature-body">
+          <h3>Feet &amp; Legs</h3>
+          <p>Legs and feet should be straight. Breeders often check this by turning the rabbit onto its back — the toes on the bottoms of the feet should point straight up toward the face. Toes that angle outward are a sign of pinched hindquarters.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WOOL -->
+  <section class="tint">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Fur — 15 Points, Three Ways</span>
+        <h2>The wool coat that gives the breed its name</h2>
+        <p class="lede">Unlike a rollback-coated breed, the American Fuzzy Lop's coat is judged in three separate parts.</p>
+      </div>
+
+      <div class="wool-grid">
+        <div class="wool-card">
+          <div class="pts">8</div>
+          <h4>Density</h4>
+          <p>Thick and dense all over the body, with guard hairs well distributed — this is what keeps the coat easy to maintain compared to a true Angora.</p>
+        </div>
+        <div class="wool-card">
+          <div class="pts">5</div>
+          <h4>Texture</h4>
+          <p>Slightly coarse rather than silky or overly soft — the coarser texture actually resists matting and tangling.</p>
+        </div>
+        <div class="wool-card">
+          <div class="pts">2</div>
+          <h4>Length</h4>
+          <p>At least 1½ inches on a senior, with about 2 inches considered ideal.</p>
+        </div>
+      </div>
+
+      <div class="callout">
+        <p>Wool measuring under 1½ inches on a senior is a disqualification. Junior coats are naturally softer with fewer guard hairs — by around 6 months that softer coat should molt out to the correct coarser adult texture, and a senior still showing junior-type wool can also be disqualified.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- COLOR & MARKINGS -->
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Color &amp; Markings — 5 Points</span>
+        <h2>Two patterns, 29 recognized colors</h2>
+        <p class="lede">Color carries the least weight of any category in the standard — but a rabbit still has to match a recognized color description to be shown as that color.</p>
+      </div>
+
+      <div class="pattern-note">
+        <div class="card">
+          <h4>Solid Pattern</h4>
+          <p>A single recognized color carried over the entire rabbit.</p>
+        </div>
+        <div class="card">
+          <h4>Broken Pattern</h4>
+          <p>A recognized color combined with white, in a spotted or patched pattern.</p>
+        </div>
+      </div>
+
+      <div class="section-head" style="margin-bottom:20px;">
+        <h3 style="font-size:22px; color:var(--navy);">Recognized color groups</h3>
+        <p class="lede" style="font-size:14.5px;">Per ARBA's current Official Breed ID Guide:</p>
+      </div>
+
+      <div class="color-grid">
+        <div class="color-cell">
+          <h4><span class="dot"></span>Agouti</h4>
+          <p>Banded, "wild-type" hair shaft with distinct rings of color and ticking.</p>
+          <div class="examples">Chestnut · Chinchilla · Chocolate Agouti · Lynx · Opal · Squirrel</div>
+        </div>
+        <div class="color-cell">
+          <h4><span class="dot"></span>Pointed White</h4>
+          <p>White body with color restricted to the nose, ears, feet, legs, and tail.</p>
+          <div class="examples">Black · Blue · Chocolate · Lilac points</div>
+        </div>
+        <div class="color-cell">
+          <h4><span class="dot"></span>Self</h4>
+          <p>One solid color carried uniformly over the entire body.</p>
+          <div class="examples">Black · Blue · Chocolate · Lilac · Blue-Eyed White · Ruby-Eyed White</div>
+        </div>
+        <div class="color-cell">
+          <h4><span class="dot"></span>Shaded</h4>
+          <p>Color that gradually transitions from dark to light, or a contrasting saddle pattern.</p>
+          <div class="examples">Sable Point · Siamese Sable · Siamese Smoke Pearl · Black/Blue/Chocolate/Lilac Tortoise Shell</div>
+        </div>
+        <div class="color-cell">
+          <h4><span class="dot"></span>Tan Pattern</h4>
+          <p>A self-colored top with contrasting markings underneath and around the face.</p>
+          <div class="examples">Black · Blue · Chocolate · Lilac Otter</div>
+        </div>
+        <div class="color-cell">
+          <h4><span class="dot"></span>Wide Band</h4>
+          <p>One even color carried broadly over the body with little to no banding.</p>
+          <div class="examples">Fawn · Orange</div>
+        </div>
+      </div>
+      <p style="margin-top:24px; font-size:13.5px;">Older breeder references sometimes cite a shorter list of about 19 colors — that reflects an earlier edition of the standard. ARBA's current Breed ID Guide (updated January 2023) lists 29, after the Tortoise Shell and Otter varieties were expanded to cover all four self-color bases.</p>
+    </div>
+  </section>
+
+  <!-- CONDITION -->
+  <section class="tint">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Condition — 5 Points</span>
+        <h2>Health and presentation</h2>
+      </div>
+      <p style="max-width:640px;">"Condition" refers to the rabbit's overall health, grooming, and presentation at the moment it's judged — clean coat, no stains or mats, good flesh condition, and freedom from anything suggesting poor health or care.</p>
+    </div>
+  </section>
+
+  <!-- FUZZY HOLLAND VS AFL -->
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">A Common Point Of Confusion</span>
+        <h2>"Fuzzy Hollands" are not American Fuzzy Lops</h2>
+      </div>
+      <div class="compare-box">
+        <h3>Same coat, different breeding behind it</h3>
+        <p>Because of how the breed originated, it's easy to confuse the two — but they aren't interchangeable. A "fuzzy Holland" is a purebred Holland Lop that happens to carry two copies of the recessive wool gene, growing a wool coat instead of correct Holland rollback fur. It carries none of the decades of dedicated selective breeding behind the American Fuzzy Lop standard, and fuzzy Hollands commonly show a higher head-set and a more problem-prone coat than a purpose-bred Fuzzy Lop.</p>
+        <p style="margin-bottom:0;">Per official AFLRC guidance, any rabbit meeting the written breed requirements is technically permitted on the show table regardless of pedigree — but a breeder selling a fuzzy Holland or a Holland/Fuzzy cross must disclose that background and must never misrepresent the animal as a purebred American Fuzzy Lop.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHILOSOPHY STATEMENT -->
+  <section class="statement">
+    <div class="wrap">
+      <p style="max-width:600px; margin:26px auto 0; color:rgba(246,241,228,0.75); font-size:15px;">A rabbit can be a wonderful, healthy, loving pet without meeting every point of the written standard. We breed toward the standard because it reflects decades of accumulated knowledge about correct, healthy structure in this breed — but every rabbit we raise, show-quality or not, is raised with the same care.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <h3>Sources</h3>
+    <p style="font-size:14px; max-width:640px;">This page is a plain-language summary intended for educational use, not a reproduction of the official text. For the complete, legally authoritative standard, always refer to the current edition of the ARBA Standard of Perfection.</p>
+    <ol>
+      <li>American Rabbit Breeders Association (ARBA) — official Standard of Perfection publication and breed page, <a href="https://arba.net/american-fuzzy-lop/" target="_blank" rel="noopener">arba.net/american-fuzzy-lop</a></li>
+      <li>ARBA Official Breed ID Guide (updated January 2023) — current recognized color list, <a href="https://arba.net/wp-content/uploads/2023/02/Breed-ID-Guide-Updated-January-2023.pdf" target="_blank" rel="noopener">arba.net (PDF)</a></li>
+      <li>American Fuzzy Lop Rabbit Club (AFLRC) — official breed standard overview and history, <a href="https://aflrc.weebly.com/standard-of-perfection.html" target="_blank" rel="noopener">aflrc.weebly.com</a></li>
+      <li>American Fuzzy Lop breed and point-schedule summary, LapLop Rabbitry, <a href="http://www.laploprabbitry.com/american-fuzzy-lop.html" target="_blank" rel="noopener">laploprabbitry.com</a></li>
+      <li>American Fuzzy Lop point schedule summary, Rabbit World ARBA Standards, <a href="http://rabbit-world-blog.blogspot.com/p/arba-standards.html" target="_blank" rel="noopener">rabbit-world-blog.blogspot.com</a></li>
+      <li>Wikipedia, "American Fuzzy Lop" (breed history and recognition timeline), <a href="https://en.wikipedia.org/wiki/American_Fuzzy_Lop" target="_blank" rel="noopener">en.wikipedia.org/wiki/American_Fuzzy_Lop</a></li>
+    </ol>
+    <p class="note">Last verified against ARBA's own breed page, ARBA's official Breed ID Guide, and multiple current breeder/club references: August 2026. Because ARBA periodically revises breed standards, always cross-check point values against the latest official ARBA publication before relying on this page for show purposes.<br><br>The information provided on this website is intended for general educational and informational purposes only. CJM Legacy Rabbitry is not a veterinary practice, and the information presented here does not constitute veterinary advice, diagnosis, treatment, or a substitute for examination, diagnosis, or care by a qualified veterinarian.
+<br><br>
+Rabbit health, genetics, nutrition, breeding, husbandry, and behavior can involve individual circumstances, variations, and exceptions. Information presented on this website should not be used to diagnose, treat, or make medical decisions regarding an individual rabbit. For concerns about a rabbit's health or medical care, consult a qualified rabbit-savvy veterinarian.
+<br><br>
+CJM Legacy Rabbitry makes reasonable efforts to present accurate, useful, and current information. However, veterinary recommendations, scientific knowledge, and available research may change over time, and no representation or guarantee is made that all information is complete, current, or applicable to every individual rabbit or situation.
+<br><br>
+Information regarding genetics, inheritance, breeding, coloration, health, or expected outcomes is provided for educational purposes and should not be interpreted as a guarantee of any particular breeding, genetic, health, temperament, or developmental outcome.</p>
+  </div>
+</footer>
+<!-- ============ END PAGE CONTENT ============ -->
+<div data-peer-review></div>
+
+<div id="site-footer"></div>
+<script src="js/layout.js"></script>
+</body>
+</html>
