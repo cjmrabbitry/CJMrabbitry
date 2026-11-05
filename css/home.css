@@ -98,6 +98,7 @@ section{ padding:96px 32px; }
   position:relative;
   width:100%;
   max-width:360px;
+  height:auto;
   filter:drop-shadow(0 30px 55px rgba(0,0,0,0.45));
 }
 
